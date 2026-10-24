@@ -1,0 +1,763 @@
+{
+  "format_version": 2,
+  "recorded_utc": "2026-10-24T04:33:44.869286+00:00",
+  "status": "TARGETED_REPAIR_CHECKS_PASS; COMPLETE_REVISED_VERIFICATION_PENDING",
+  "mathematical_source_commit": "c9ccb6a0d9ddd1007fdce6efab50807ec47464b9",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "current_sources": {
+    "manifest": "verification/lean-source-sha256-current.json",
+    "sha256": "156c13a2ef6cf60e41b83a676e135b3f824fbd29abab218e0d6005a6c26e9df4",
+    "modules": 681
+  },
+  "proof_compatibility": {
+    "record": "proof-compatibility.json",
+    "sha256": "8090027f56eb0739a0015a8b706d9840ba2d3edac94af738e39c35608ee516b3"
+  },
+  "historical_whole_submission": {
+    "record": "verification/pre-repair.json",
+    "sha256": "ffb758d015c5d7afe0ce91114082f2077c0bc9367af46b92486890695908c3a6",
+    "source_manifest": "verification/lean-source-sha256.json",
+    "source_manifest_sha256": "79d63668c2dd50a58344720a4cad396ad4c551f2b21e5aaf12ba1ce14aa941c9",
+    "scope": "Original port only. All source-binding language inside the preserved record refers to that earlier snapshot.",
+    "build_and_axiom_audit": "PASS_HISTORICAL",
+    "statement_comparison_and_fresh_lean_replay": "PASS_HISTORICAL",
+    "serial_nanoda_replay": "PASS_HISTORICAL_SEPARATE_CONTINUATION_WITH_ENLARGED_MAIN_STACK",
+    "four_worker_nanoda": {
+      "status": "HISTORICAL_STACK_OVERFLOW",
+      "raw_receipt_sha256": "6cab035f76c2c405a8dd13ea95783a6b091b63cdf98a79fb15b0ae4b2b0ffd27",
+      "solution_export_sha256": "b00760ab62d73f8049764ae694dcc918569f8a226eb945fc300004e234686225",
+      "reported_status": "INCOMPLETE"
+    }
+  },
+  "current_targeted_build": {
+    "status": "PASS_CHANGED_MODULES_ONLY",
+    "closure_modules": 33,
+    "newly_compiled_modules": 6,
+    "verified_reused_modules": 27,
+    "scope": "Six changed modules and their required imports; excludes downstream complete-submission rebuild.",
+    "integration_receipt_sha256": "4d8cff2bd15cca157e77e11d144e0430a191c9e3a26d1cea0beb484658f10c92",
+    "build_receipt_sha256": "57c08c2f5ea30084fb2e754ec8be027effd386322748e0fef5d62d594b29a125",
+    "integration_driver_sha256": "9ed0b2516486126000e9b24be03ff6354be80abafbdac39c20319c343dba6994",
+    "guard_sha256": "12228721bb4d05a5f4d58c992f344975e15152ca3819f104e950caf7737640f6",
+    "started_utc": "2026-10-24T04:28:29.422086+00:00",
+    "finished_utc": "2026-10-24T04:31:30.038029+00:00",
+    "steps": [
+      {
+        "step": "upper.certificate.blockf0_parts.C00",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 1193152,
+          "seconds": 48.617,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 48,
+            "successful_samples": 48,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "upper.certificate.halfar0_parts.C00",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 1121440,
+          "seconds": 26.888,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 27,
+            "successful_samples": 27,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "upper.certificate.halfar0_parts.C01",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 1122208,
+          "seconds": 28.947,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 29,
+            "successful_samples": 29,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "upper.certificate.halfar0_parts.C02",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 1121600,
+          "seconds": 27.936,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 28,
+            "successful_samples": 28,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "upper.certificate.halfar0_parts.C03",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 1122912,
+          "seconds": 28.971,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 29,
+            "successful_samples": 29,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "upper.certificate.halfar0_parts.C04",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 1110144,
+          "seconds": 14.5,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 15,
+            "successful_samples": 15,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      }
+    ],
+    "independent_actual_review": {
+      "status": "PASS_AI_AGENT_REVIEW",
+      "sha256": "c2d74251ed5ea512742f5716129f0fee266a4ed7b2753ae875b4b0f3701ba1d9",
+      "scope": "Six proof changes, targeted compilation and six selected replays; not human peer review."
+    }
+  },
+  "current_selected_nanoda_replays": {
+    "status": "PASS_SELECTED_EQUALITIES_ONLY",
+    "threads": 4,
+    "scope": "Six selected repaired declaration dependency exports only; no full revised replay or Palomar acceptance.",
+    "raw_receipt_sha256": "4436e1661a110b0f77c8835807cfdbb500181b5624b795a84264a92cefaf47e3",
+    "started_utc": "2026-10-24T04:32:01.333949+00:00",
+    "finished_utc": "2026-10-24T04:32:50.244367+00:00",
+    "guard_sha256": "12228721bb4d05a5f4d58c992f344975e15152ca3819f104e950caf7737640f6",
+    "before_objects_sha256": "726260a9ebf0d7a7d263c1c9cf6b7aff3bc220d44e08a1e3595827907f6ccb34",
+    "after_objects_sha256": "726260a9ebf0d7a7d263c1c9cf6b7aff3bc220d44e08a1e3595827907f6ccb34",
+    "declarations": [
+      {
+        "module": "upper.certificate.blockf0_parts.C00",
+        "theorem": "SuperpermutationUpperBound.Native14.Certificate.BlockF0Parts.C00.rows_eq_suffix",
+        "bytes": 17584352,
+        "export_sha256": "ab8aa3b1f95fa03df96d9af7a15481dafcbce556deb349d75678bd067f549d6d",
+        "configuration_sha256": "abd7c4486669657fa6d3d3ae866ae3b296cf8d991ca6b69d77b3bf8f047973d3",
+        "status": "PASS_SELECTED_DECLARATION",
+        "export_audit": {
+          "target": "SuperpermutationUpperBound.Native14.Certificate.BlockF0Parts.C00.rows_eq_suffix",
+          "target_declaration": {
+            "all": [
+              19737
+            ],
+            "levelParams": [],
+            "name": 19737,
+            "type": 324577,
+            "value": 326234
+          },
+          "actual_exported_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "unexpected_axioms": []
+        }
+      },
+      {
+        "module": "upper.certificate.halfar0_parts.C00",
+        "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C00.rows_eq_suffix",
+        "bytes": 17582428,
+        "export_sha256": "4afb30ca0f5f25ad793bd638a8b02b1f5cc58fa8cb504dd13c699b77ffc8854a",
+        "configuration_sha256": "b40595552e1ff52bd8475688b7b374d5a3b3f15f7036f71a8d4d46888fd690b7",
+        "status": "PASS_SELECTED_DECLARATION",
+        "export_audit": {
+          "target": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C00.rows_eq_suffix",
+          "target_declaration": {
+            "all": [
+              19737
+            ],
+            "levelParams": [],
+            "name": 19737,
+            "type": 324577,
+            "value": 326234
+          },
+          "actual_exported_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "unexpected_axioms": []
+        }
+      },
+      {
+        "module": "upper.certificate.halfar0_parts.C01",
+        "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C01.rows_eq_suffix",
+        "bytes": 17582430,
+        "export_sha256": "0daae463b53c5623c0bcb7fc8dd5b97dfa42ea1c4a893ba78add8dba495b3111",
+        "configuration_sha256": "3bf85ccda11067a40f91d4b9f14fc9aad9a3a25763b44eda4c3cf6e281a649fa",
+        "status": "PASS_SELECTED_DECLARATION",
+        "export_audit": {
+          "target": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C01.rows_eq_suffix",
+          "target_declaration": {
+            "all": [
+              19737
+            ],
+            "levelParams": [],
+            "name": 19737,
+            "type": 324577,
+            "value": 326234
+          },
+          "actual_exported_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "unexpected_axioms": []
+        }
+      },
+      {
+        "module": "upper.certificate.halfar0_parts.C02",
+        "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C02.rows_eq_suffix",
+        "bytes": 17582428,
+        "export_sha256": "8185acce415aa6f8495f0cb20b7c6ba041fc2f58c925f14795be1ad3d2d382d1",
+        "configuration_sha256": "420bba81f1d133c2a819a0b747587d399ff047421f548478ff2393a117536b84",
+        "status": "PASS_SELECTED_DECLARATION",
+        "export_audit": {
+          "target": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C02.rows_eq_suffix",
+          "target_declaration": {
+            "all": [
+              19737
+            ],
+            "levelParams": [],
+            "name": 19737,
+            "type": 324577,
+            "value": 326234
+          },
+          "actual_exported_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "unexpected_axioms": []
+        }
+      },
+      {
+        "module": "upper.certificate.halfar0_parts.C03",
+        "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C03.rows_eq_suffix",
+        "bytes": 17582427,
+        "export_sha256": "ac417620a2854f17f04de00facd43bddc044d93068cf1caeb393f2d15c41c255",
+        "configuration_sha256": "6424f9e081445b3371f5f2aa15235959de085645ee0aece6ed4804c9d5ff5727",
+        "status": "PASS_SELECTED_DECLARATION",
+        "export_audit": {
+          "target": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C03.rows_eq_suffix",
+          "target_declaration": {
+            "all": [
+              19737
+            ],
+            "levelParams": [],
+            "name": 19737,
+            "type": 324577,
+            "value": 326234
+          },
+          "actual_exported_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "unexpected_axioms": []
+        }
+      },
+      {
+        "module": "upper.certificate.halfar0_parts.C04",
+        "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C04.rows_eq_suffix",
+        "bytes": 17444691,
+        "export_sha256": "54324a88cb3cac06eed790188a56ab260db982946042e77c78378dc35ed9260f",
+        "configuration_sha256": "9b15a384e612f1b33fb69c38c3ccdcbc44c98a63b68733dd4c2b1baf63067529",
+        "status": "PASS_SELECTED_DECLARATION",
+        "export_audit": {
+          "target": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C04.rows_eq_suffix",
+          "target_declaration": {
+            "all": [
+              19713
+            ],
+            "levelParams": [],
+            "name": 19713,
+            "type": 322937,
+            "value": 323302
+          },
+          "actual_exported_axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "unexpected_axioms": []
+        }
+      }
+    ],
+    "steps": [
+      {
+        "step": "export-1-upper-certificate-blockf0_parts-C00",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2041856,
+          "seconds": 6.236,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 7,
+            "successful_samples": 7,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "nanoda-four-worker-1-upper-certificate-blockf0_parts-C00",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2480,
+          "seconds": 1.07,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 2,
+            "successful_samples": 2,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "export-2-upper-certificate-halfar0_parts-C00",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2032624,
+          "seconds": 3.133,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 4,
+            "successful_samples": 4,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "nanoda-four-worker-2-upper-certificate-halfar0_parts-C00",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2448,
+          "seconds": 1.067,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 2,
+            "successful_samples": 2,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "export-3-upper-certificate-halfar0_parts-C01",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2036336,
+          "seconds": 3.135,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 4,
+            "successful_samples": 4,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "nanoda-four-worker-3-upper-certificate-halfar0_parts-C01",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2432,
+          "seconds": 1.07,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 2,
+            "successful_samples": 2,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "export-4-upper-certificate-halfar0_parts-C02",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2033120,
+          "seconds": 3.142,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 4,
+            "successful_samples": 4,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "nanoda-four-worker-4-upper-certificate-halfar0_parts-C02",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2448,
+          "seconds": 1.072,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 2,
+            "successful_samples": 2,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "export-5-upper-certificate-halfar0_parts-C03",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2019808,
+          "seconds": 3.138,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 4,
+            "successful_samples": 4,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "nanoda-four-worker-5-upper-certificate-halfar0_parts-C03",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2656,
+          "seconds": 1.067,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 2,
+            "successful_samples": 2,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "export-6-upper-certificate-halfar0_parts-C04",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2031760,
+          "seconds": 3.139,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 4,
+            "successful_samples": 4,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      },
+      {
+        "step": "nanoda-four-worker-6-upper-certificate-halfar0_parts-C04",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "recovery-project-serial-2GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 2097152,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 2400,
+          "seconds": 1.071,
+          "stop_reason": null,
+          "host_memory": {
+            "attempted_samples": 2,
+            "successful_samples": 2,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 87
+            },
+            "minimum_reported_free_percent": 87,
+            "maximum_pressure_level_observed": 1
+          }
+        }
+      }
+    ]
+  },
+  "complete_current_build_and_replay": {
+    "status": "NOT_RUN",
+    "reason": "No complete revised build, Comparator run, fresh Lean replay, or whole four-worker NanoDa replay was attempted under the reduced local resource limit."
+  },
+  "current_static_checks": {
+    "status": "PASS_STATIC_CHECKS_ONLY",
+    "recorded_utc": "2026-10-24T04:34:58.339512+00:00",
+    "checks": [
+      {
+        "check": "source-policy",
+        "exit_code": 0,
+        "output_sha256": "424c7140f6c81d05a1bea91efa3dd874701398730d06091414c52572052ee516"
+      },
+      {
+        "check": "metadata-and-source",
+        "exit_code": 0,
+        "output_sha256": "9dde2bacada7a67b572c3fb53992fd647acc9e70c9248bba9e0df83fc197ad87"
+      }
+    ],
+    "input_sha256": {
+      "formalization.yaml": "ac9276c28a28b8f89344b28dfc3b9e2e1d4f0e64100bf5580055165a61e88cd3",
+      "lakefile.toml": "45fdc0cab3b385f010163300a761a2bdcef9587e3209a8a740c10920ad2d1624",
+      "lake-manifest.json": "59037d6b91f7677dede4638861b75aa246693b20f17015508204a4c5d125f4b6",
+      "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "tools/source_policy.py": "e091b59059f6e38732da271db3c8566ab1a8fe873f8754b0f40493f7724c4d3c",
+      "tools/proof_sources.py": "9ea04968e328c6b0415251272083c19687250052d241124e4d344390c5e564b7",
+      "tools/shared_setup.py": "41140cceac8b6f4ffb6197c5557ae98489b6a828d6d59e0549fd80123066904b",
+      "tools/resource_guard.py": "78994ecd895487a50d1e23b0f0f729908254c684423b4f983c2ae1fd27bc468d",
+      "tools/check.py": "4b75c3e51910b73502ce0f249bcf3d756cf7344b154e76c5c3e119b6b43ae490",
+      "tools/local_compare.py": "2492f6e6f1e37a37520feab79d75f9be9b0685c3ae01632d2d3a84ff67eb0624",
+      "scripts/validate-submission.py": "52f1a81fa472e00ed120a26af81cd095b381e8fb43899b170fbce3a69ff82144",
+      "scripts/check-lean-sources.py": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+      ".github/workflows/palomar-preflight.yml": "31bd3658559bb8f81644cabb48ae8acc9a2517c7ae00ea03448c6f352c98b048",
+      "comparator.json": "7138139503fc3e409f913887cc2960a71891f4da96cda9af928c5b3e5dc04cb4"
+    },
+    "source_manifest_sha256": "156c13a2ef6cf60e41b83a676e135b3f824fbd29abab218e0d6005a6c26e9df4",
+    "palomar_validator_commit": "ad5db9e7ff8b17523d73aeb244aaeabcde810c64",
+    "scope": "Source policy, official metadata/configuration checks and source size/header scan only; no full revised Lean build or replay."
+  },
+  "local_resource_policy": {
+    "scope": "Targeted checks only; separate recovery guard, not the unchanged public historical runner.",
+    "sampled_rss_limit_kib": 2097152,
+    "per_process_deadline_seconds": 120,
+    "required_host_pressure_level": 1,
+    "minimum_host_reported_free_percent": 25,
+    "limitations": "Sampled observations, not an OS hard memory cap; not the hosted Palomar resource policy."
+  },
+  "full_palomar_preflight": {
+    "status": "NOT_RUN",
+    "reason": "The protected Linux workflow fetches a publicly readable GitHub snapshot. No repository publication or registry submission was performed.",
+    "workflow": ".github/workflows/palomar-preflight.yml"
+  },
+  "publication": "NOT_PUBLISHED_OR_SUBMITTED"
+}

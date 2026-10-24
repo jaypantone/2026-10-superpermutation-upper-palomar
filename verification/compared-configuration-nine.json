@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SuperpermutationUpper.finite_bound",
+    "SuperpermutationUpper.asymptotic_bound",
+    "SuperpermutationUpper.word_14",
+    "SuperpermutationUpper.word_15",
+    "SuperpermutationUpper.word_16",
+    "SuperpermutationUpper.word_17",
+    "SuperpermutationUpper.word_18",
+    "SuperpermutationUpper.word_19",
+    "SuperpermutationUpper.word_20"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

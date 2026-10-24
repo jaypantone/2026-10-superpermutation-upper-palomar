@@ -1,0 +1,307 @@
+{
+  "format_version": 1,
+  "recorded_utc": "2026-10-23T03:29:38.824107+00:00",
+  "status": "PREPARED_LOCAL_CANDIDATE; FULL_PALOMAR_PREFLIGHT_NOT_RUN",
+  "mathematical_source_commit": "c9ccb6a0d9ddd1007fdce6efab50807ec47464b9",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "build": {
+    "status": "PASS",
+    "modules": 681,
+    "targets": [
+      "Challenge",
+      "Solution",
+      "AxiomCheck"
+    ],
+    "raw_receipt_sha256": "d552ac7ce9ed48ca67d05d306a694d81ffcca35a8105e9c99cb94b0adcfa51a4",
+    "compiler_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+    "finished_utc": "2026-10-23T00:06:13.249337+00:00",
+    "source_hashes": "verification/lean-source-sha256.json",
+    "method": "Serial Lean 4.35 build. Reused objects require matching source, compiler/runtime, transitive closure, and object hashes. Sources and build products were staged outside Dropbox.",
+    "resource_limits": "One project compiler; one thread; Lean 4096 MiB; sampled process-group RSS 8 GiB; 300 seconds per module; nice 10."
+  },
+  "axiom_audit": {
+    "status": "PASS",
+    "declarations": 9,
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "output": "verification/axioms.txt",
+    "output_sha256": "457c7eebf9dccecdba8daf52a948ad7c080e692f255a0396cb9fff0c7cf6e0fc",
+    "declaration_scope": "Exactly the theorem names in the current comparator configurations."
+  },
+  "local_comparisons": [
+    {
+      "configuration": "comparator.json",
+      "driver_source_sha256": {
+        "local_compare.py": "2492f6e6f1e37a37520feab79d75f9be9b0685c3ae01632d2d3a84ff67eb0624",
+        "resource_guard.py": "78994ecd895487a50d1e23b0f0f729908254c684423b4f983c2ae1fd27bc468d"
+      },
+      "local_deadlines_seconds": {
+        "exports": 300,
+        "each_kernel_check": 10800
+      },
+      "configuration_sha256": "7138139503fc3e409f913887cc2960a71891f4da96cda9af928c5b3e5dc04cb4",
+      "status": "PASS_LOCAL_COMPOSITE_DIAGNOSTIC",
+      "scope": "Unsandboxed local diagnostics; NOT full Palomar mechanical verification.",
+      "raw_receipt_sha256": "125beb09f292b0d6a8e93bc40d544a072e97898d073fcaf16e2b37956ac0ba06",
+      "current_source_modules": 680,
+      "source_binding": "Exact current challenge/solution source closure and final-build compiler/runtime hashes matched.",
+      "phases": {
+        "statement_and_axiom_comparison": "PASS_LOCAL_LOG_CONFIRMED",
+        "lean_export_replay": "PASS_LOCAL_UNSANDBOXED",
+        "nanoda_export_replay": "PASS_LOCAL_UNSANDBOXED"
+      },
+      "phase_evidence": {
+        "comparator_source_sha256": "55daf430e5adea38453b21798cbdf4cd099f66ec969494022a566a8ae098c00b",
+        "interpretation": "Statement comparison, axiom checking and Lean replay passed in the earlier run. A separately validated NanoDa process later accepted the exact same export. The original INCOMPLETE receipt, its timestamps and failed NanoDa step are preserved. No Lean replay was repeated by the continuation; no full Palomar pass is claimed."
+      },
+      "started_utc": "2026-10-23T00:38:28.922205+00:00",
+      "finished_utc": "2026-10-23T02:09:16.866039+00:00",
+      "steps": [
+        {
+          "step": "export-challenge",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "timeout_limit_seconds": 300,
+            "peak_sampled_rss_kib": 962816,
+            "seconds": 5.192,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 48312,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        },
+        {
+          "step": "export-solution",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-300s",
+            "timeout_limit_seconds": 300,
+            "peak_sampled_rss_kib": 3423280,
+            "seconds": 17.567,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 48331,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        },
+        {
+          "step": "comparator-and-lean-kernel",
+          "exit_code": 0,
+          "log_sha256": "44185e931f2fc8b47a320483e3fea92b5edc0288cf80f976547fd712815368a4",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-10800s",
+            "timeout_limit_seconds": 10800,
+            "peak_sampled_rss_kib": 2566096,
+            "seconds": 5324.842,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 48372,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        },
+        {
+          "step": "nanoda-one-thread",
+          "exit_code": -6,
+          "log_sha256": "188d81da53b6581e6855a45a5e0df1695b82c047b3ffbbe043056881b8576383",
+          "resource_guard": {
+            "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-10800s",
+            "timeout_limit_seconds": 10800,
+            "peak_sampled_rss_kib": 663904,
+            "seconds": 100.274,
+            "stop_reason": null,
+            "cleanup": [
+              {
+                "pgid": 32063,
+                "method": "already-inactive",
+                "signaled_pids": [],
+                "result": "no-live-members"
+              }
+            ]
+          }
+        }
+      ],
+      "exports": {
+        "challenge_export": {
+          "bytes": 5945605,
+          "sha256": "aa937a045785ab231840d32beaaa8f45cdd3227b7b128acfe19905608cd07d91"
+        },
+        "solution_export": {
+          "bytes": 201387874,
+          "sha256": "b00760ab62d73f8049764ae694dcc918569f8a226eb945fc300004e234686225"
+        }
+      },
+      "original_run_status": "INCOMPLETE",
+      "original_run_phases": {
+        "statement_and_axiom_comparison": "PASS_LOCAL_LOG_CONFIRMED",
+        "lean_export_replay": "PASS_LOCAL_UNSANDBOXED",
+        "nanoda_export_replay": "INCOMPLETE"
+      },
+      "original_run_stopped_at": "nanoda-one-thread",
+      "original_run_interpretation": "No complete diagnostic success; timeouts and resource stops are inconclusive.",
+      "composite_finished_utc": "2026-10-23T03:27:59.384560+00:00",
+      "nanoda_continuation": {
+        "status": "PASS_NANODA_CONTINUATION",
+        "raw_receipt_sha256": "378b2f0bb527ed4416da8d5336ebf6b63af17621183a8e473fb3921b9eb386c6",
+        "original_report_sha256": "125beb09f292b0d6a8e93bc40d544a072e97898d073fcaf16e2b37956ac0ba06",
+        "solution_export": {
+          "bytes": 201387874,
+          "sha256": "b00760ab62d73f8049764ae694dcc918569f8a226eb945fc300004e234686225"
+        },
+        "nanoda_binary_sha256": "b5a75a50d07b06a25b3ddb9519144ebdeed8e0f3489222c88ba4049dfe8ce627",
+        "configuration_sha256": "7e923603fc9df6f9accd010621e45725d1b379b966731f377dab0daf81dc7042",
+        "comparator_configuration_sha256": "7138139503fc3e409f913887cc2960a71891f4da96cda9af928c5b3e5dc04cb4",
+        "controls": {
+          "threads": 1,
+          "stack_soft_bytes": 67092480,
+          "timeout_seconds": 10800,
+          "rss_limit_kib": 8388608
+        },
+        "stack_limit_before_bytes": [
+          8372224,
+          67092480
+        ],
+        "stack_limit_after_bytes": [
+          67092480,
+          67092480
+        ],
+        "launch_receipt_sha256": "0971ac7ea01d5f37f757a0f040d7753709449aeaa7c937683a790bcf179763ca",
+        "before_source_audit_sha256": "eb9c91fabe6919ea333c0901a15a681858cf859fc1ab4ab8c26fa72548def252",
+        "after_source_audit_sha256": "d30a0a62bdcac4dd2c9ab55fe5b502e3cfebd57795822ae6601fa5ca3149dc8a",
+        "driver_and_input_sha256": {
+          "continue_upper_nanoda_v2.py": "9ab85d1e8860ebd0ef5da9d9a88ebbc52d04236054c829b9dc5ef2c9db4d3b3e",
+          "validate_reusable_lean.py": "757908cc6e1679cba7bb8b74c4202c689e54c6e9f97ce53e1f0502019be7379e",
+          "review_completed_replay.py": "23840bf175d3f6ff72cc3bea1c54686332a9ff568f874e0cabeabc93fc51480a",
+          "replay-review-expected.json": "f0d1b31a8bba79d43b0453d2f165de0ae0c41d5a47496ffa96fafbb6260ce2ad",
+          "resource_guard.py": "78994ecd895487a50d1e23b0f0f729908254c684423b4f983c2ae1fd27bc468d",
+          "shared_setup.py": "41140cceac8b6f4ffb6197c5557ae98489b6a828d6d59e0549fd80123066904b"
+        },
+        "validation": {
+          "status": "PASS_COMPOSITE_LOCAL_REPLAY_REVIEW",
+          "reviewed_utc": "2026-10-23T03:29:37.271468+00:00",
+          "reviewer_script_sha256": "071e21145a8a07fd5da487e5827ae7bb0c035383e3b9248b06f846585e4193c6",
+          "reviewed_input_manifest_sha256": "f1e91acd4c5d6ac5a5400b103d823949ef26939a5ad33bb3c8916d278dddea38",
+          "original_report_status": "INCOMPLETE",
+          "original_report_sha256": "125beb09f292b0d6a8e93bc40d544a072e97898d073fcaf16e2b37956ac0ba06",
+          "continuation_report_status": "PASS_NANODA_CONTINUATION",
+          "continuation_report_sha256": "378b2f0bb527ed4416da8d5336ebf6b63af17621183a8e473fb3921b9eb386c6",
+          "configuration_sha256": "7138139503fc3e409f913887cc2960a71891f4da96cda9af928c5b3e5dc04cb4",
+          "theorem_names": [
+            "SuperpermutationUpper.finite_bound",
+            "SuperpermutationUpper.asymptotic_bound",
+            "SuperpermutationUpper.word_14",
+            "SuperpermutationUpper.word_15",
+            "SuperpermutationUpper.word_16",
+            "SuperpermutationUpper.word_17",
+            "SuperpermutationUpper.word_18",
+            "SuperpermutationUpper.word_19",
+            "SuperpermutationUpper.word_20"
+          ],
+          "solution_export_sha256": "b00760ab62d73f8049764ae694dcc918569f8a226eb945fc300004e234686225",
+          "nanoda_binary_sha256": "b5a75a50d07b06a25b3ddb9519144ebdeed8e0f3489222c88ba4049dfe8ce627",
+          "phases": {
+            "statement_and_axiom_comparison": "PASS_EARLIER_RUN",
+            "lean_export_replay": "PASS_EARLIER_RUN",
+            "nanoda_export_replay": "PASS_SEPARATE_CONTINUATION"
+          },
+          "earlier_lean_seconds": 5324.842,
+          "continuation_nanoda_seconds": 3279.639,
+          "continuation_peak_sampled_rss_kib": 3992288,
+          "stack_limit_before_bytes": [
+            8372224,
+            67092480
+          ],
+          "stack_limit_after_bytes": [
+            67092480,
+            67092480
+          ]
+        },
+        "started_utc": "2026-10-23T02:33:16.679950+00:00",
+        "finished_utc": "2026-10-23T03:27:59.384560+00:00",
+        "steps": [
+          {
+            "step": "nanoda-continuation-one-thread",
+            "exit_code": 0,
+            "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "resource_guard": {
+              "policy": "project-serial-4GiB-Lean-8GiB-sampled-RSS-10800s",
+              "timeout_limit_seconds": 10800,
+              "peak_sampled_rss_kib": 3992288,
+              "seconds": 3279.639,
+              "stop_reason": null,
+              "cleanup": [
+                {
+                  "pgid": 42213,
+                  "method": "already-inactive",
+                  "signaled_pids": [],
+                  "result": "no-live-members"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "static_checks": {
+    "checks": [
+      {
+        "check": "source_policy",
+        "status": "PASS",
+        "exit_code": 0,
+        "output_sha256": "424c7140f6c81d05a1bea91efa3dd874701398730d06091414c52572052ee516"
+      },
+      {
+        "check": "metadata_configuration_and_source_limits",
+        "status": "PASS",
+        "exit_code": 0,
+        "output_sha256": "9dde2bacada7a67b572c3fb53992fd647acc9e70c9248bba9e0df83fc197ad87"
+      }
+    ],
+    "input_sha256": {
+      "formalization.yaml": "ac9276c28a28b8f89344b28dfc3b9e2e1d4f0e64100bf5580055165a61e88cd3",
+      "lakefile.toml": "45fdc0cab3b385f010163300a761a2bdcef9587e3209a8a740c10920ad2d1624",
+      "lake-manifest.json": "59037d6b91f7677dede4638861b75aa246693b20f17015508204a4c5d125f4b6",
+      "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "tools/source_policy.py": "e091b59059f6e38732da271db3c8566ab1a8fe873f8754b0f40493f7724c4d3c",
+      "tools/proof_sources.py": "9ea04968e328c6b0415251272083c19687250052d241124e4d344390c5e564b7",
+      "tools/shared_setup.py": "41140cceac8b6f4ffb6197c5557ae98489b6a828d6d59e0549fd80123066904b",
+      "tools/resource_guard.py": "78994ecd895487a50d1e23b0f0f729908254c684423b4f983c2ae1fd27bc468d",
+      "tools/check.py": "4b75c3e51910b73502ce0f249bcf3d756cf7344b154e76c5c3e119b6b43ae490",
+      "tools/local_compare.py": "2492f6e6f1e37a37520feab79d75f9be9b0685c3ae01632d2d3a84ff67eb0624",
+      "scripts/validate-submission.py": "52f1a81fa472e00ed120a26af81cd095b381e8fb43899b170fbce3a69ff82144",
+      "scripts/check-lean-sources.py": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+      ".github/workflows/palomar-preflight.yml": "31bd3658559bb8f81644cabb48ae8acc9a2517c7ae00ea03448c6f352c98b048",
+      "comparator.json": "7138139503fc3e409f913887cc2960a71891f4da96cda9af928c5b3e5dc04cb4"
+    },
+    "palomar_validator_commit": "ad5db9e7ff8b17523d73aeb244aaeabcde810c64",
+    "independent_statement_and_provenance_review": "AI-agent review; not human peer review"
+  },
+  "full_palomar_preflight": {
+    "status": "NOT_RUN",
+    "reason": "The protected Linux workflow fetches a publicly readable GitHub snapshot. No repository publication or registry submission was performed.",
+    "workflow": ".github/workflows/palomar-preflight.yml"
+  },
+  "publication": "NOT_PUBLISHED_OR_SUBMITTED"
+}

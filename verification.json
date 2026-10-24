@@ -1,0 +1,262 @@
+{
+  "format_version": 3,
+  "recorded_utc": "2026-10-24T15:06:06.865079+00:00",
+  "status": "PASS_CURRENT_COMPLETE_BUILD_AND_FULL_NANODA; PROTECTED_PALOMAR_NOT_RUN",
+  "mathematical_source_commit": "c9ccb6a0d9ddd1007fdce6efab50807ec47464b9",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "current_sources": {
+    "manifest": "verification/lean-source-sha256-current.json",
+    "sha256": "156c13a2ef6cf60e41b83a676e135b3f824fbd29abab218e0d6005a6c26e9df4",
+    "modules": 681
+  },
+  "proof_compatibility": {
+    "record": "proof-compatibility.json",
+    "sha256": "8090027f56eb0739a0015a8b706d9840ba2d3edac94af738e39c35608ee516b3",
+    "scope": "Source-change record created before full local completion; its runtime note is historical. The current source hashes are unchanged."
+  },
+  "current_complete_build": {
+    "status": "PASS",
+    "modules": 681,
+    "newly_compiled_modules": 465,
+    "verified_reused_modules": 216,
+    "targets": [
+      "Solution",
+      "Challenge",
+      "AxiomCheck"
+    ],
+    "compiler_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+    "runtime_artifacts": {
+      "lib/lean/libInit_shared.dylib": "b788cf0d038e33afe699fa994c52bcee3bf072d84ac71901739d870369ec318b",
+      "lib/lean/libLake_shared.dylib": "43e2aa2877eccaeb9d57a6d01b5947e02b71070e99099939a07bfad113bab270",
+      "lib/lean/libleanshared.dylib": "cd332259fb604bf910288efdbf6f840dc35e00972a7df13aea2b717dacf8cddb",
+      "lib/lean/libleanshared_1.dylib": "2a10216dd8fd3dadae11dbbe4863162db13eaaf3cecfa82a691bb22cbf062f2a",
+      "lib/lean/libleanshared_2.dylib": "7e5de27f8138151784f77cdfb9ea1f630cf32d36e8fe6acdc862bba51a65d566"
+    },
+    "raw_report_sha256": "c10ba2483bb0e959ab0c5522d0c77fc43fe87d734bcc1978b95bd0c95bfbda9c",
+    "raw_build_receipt_sha256": "e83e8aaee975ece18c5b3ac7c681031f5f2090d1c7f5cfedf9a1a0fcac2761dc",
+    "driver_sha256": "13185c5b021383d2e426adf09cb9e4310c27181bf84767a00caf62851227fb21",
+    "guard_sha256": "ac60b0d45e377babc93c43f1b4996168651c977d65dcc6c7526a6e51d2d6dd53",
+    "started_utc": "2026-10-24T13:13:34.915543+00:00",
+    "finished_utc": "2026-10-24T14:07:03.168550+00:00",
+    "resource_guard": {
+      "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-10800s",
+      "rss_limit_kib": 6291456,
+      "timeout_limit_seconds": 10800,
+      "peak_sampled_rss_kib": 4608656,
+      "seconds": 3206.617,
+      "host_memory": {
+        "attempted_samples": 3102,
+        "successful_samples": 3102,
+        "initial": {
+          "pressure_level": 1,
+          "reported_free_percent": 87
+        },
+        "last": {
+          "pressure_level": 1,
+          "reported_free_percent": 82
+        },
+        "minimum_reported_free_percent": 74,
+        "maximum_pressure_level_observed": 1
+      },
+      "stop_reason": null
+    }
+  },
+  "current_full_nanoda_replay": {
+    "status": "PASS",
+    "scope": "Full dependency export of all nine revised upper Solution claims replayed with pinned four-worker NanoDa on macOS. No new Comparator or Lean replay; not protected Linux Palomar verification.",
+    "threads": 4,
+    "theorems": [
+      "SuperpermutationUpper.finite_bound",
+      "SuperpermutationUpper.asymptotic_bound",
+      "SuperpermutationUpper.word_14",
+      "SuperpermutationUpper.word_15",
+      "SuperpermutationUpper.word_16",
+      "SuperpermutationUpper.word_17",
+      "SuperpermutationUpper.word_18",
+      "SuperpermutationUpper.word_19",
+      "SuperpermutationUpper.word_20"
+    ],
+    "actual_exported_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "unexpected_axioms": [],
+    "solution_export": {
+      "bytes": 201813708,
+      "sha256": "49f4239b24e172a27573cc1d466c9d57170f04fe1648f3b581b64350a61edb85"
+    },
+    "raw_receipt_sha256": "a08979c2acdfeac176829756557777918492aa9a8fd8838cb601a6be176b2cd7",
+    "driver_sha256": "c02f616a725a7492feeb8810fa44ba23f0806662b76f4ce3115664368555a69b",
+    "checker_sha256": "b5a75a50d07b06a25b3ddb9519144ebdeed8e0f3489222c88ba4049dfe8ce627",
+    "exporter_sha256": "01327b83d6a69dbc84fa04fd671c61068b2f074e51d1bf607bf6a6b9aed5339e",
+    "configuration_sha256": "03a9a77a4ed0de748f47c1bec6d5d606235ed9f94cf438a399f6d5e0a346a9d7",
+    "before_objects_sha256": "de4ecac87fbfea6d08fe780458c2e5a1a21ddd763f6a4219ffb61bfbd4eb7ea5",
+    "after_objects_sha256": "de4ecac87fbfea6d08fe780458c2e5a1a21ddd763f6a4219ffb61bfbd4eb7ea5",
+    "started_utc": "2026-10-24T14:07:15.086268+00:00",
+    "finished_utc": "2026-10-24T14:22:54.888644+00:00",
+    "steps": [
+      {
+        "step": "export-nine-theorems",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-120s",
+          "rss_limit_kib": 6291456,
+          "timeout_limit_seconds": 120,
+          "peak_sampled_rss_kib": 3427296,
+          "seconds": 16.578,
+          "host_memory": {
+            "attempted_samples": 17,
+            "successful_samples": 17,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 82
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 82
+            },
+            "minimum_reported_free_percent": 82,
+            "maximum_pressure_level_observed": 1
+          },
+          "stop_reason": null
+        }
+      },
+      {
+        "step": "nanoda-full-nine-four-workers",
+        "exit_code": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "resource_guard": {
+          "policy": "completion-owned-group-aggregate-6GiB-sampled-RSS-host-normal-free25pct-7200s",
+          "rss_limit_kib": 6291456,
+          "timeout_limit_seconds": 7200,
+          "peak_sampled_rss_kib": 4068880,
+          "seconds": 913.846,
+          "host_memory": {
+            "attempted_samples": 883,
+            "successful_samples": 883,
+            "initial": {
+              "pressure_level": 1,
+              "reported_free_percent": 82
+            },
+            "last": {
+              "pressure_level": 1,
+              "reported_free_percent": 82
+            },
+            "minimum_reported_free_percent": 82,
+            "maximum_pressure_level_observed": 1
+          },
+          "stop_reason": null
+        }
+      }
+    ]
+  },
+  "current_statement_interface": {
+    "status": "UNCHANGED_SOURCE_BYTES",
+    "files": {
+      "Challenge.lean": "5f6d63555635d561bcf7d21c09f74f0862198af0466e945e8d141106992e729d",
+      "Solution.lean": "8ae69edefe945a4ccb685b1a93d50e506801e3e2af6abe44dd638756da334d31",
+      "AxiomCheck.lean": "13925310d9dd2c4742b24e92f2fec623f63c35186072c676d8295992cb574432"
+    },
+    "comparison": "Historical Comparator success is preserved below. No new Comparator run is claimed."
+  },
+  "fresh_comparator_on_revised_sources": "NOT_RUN",
+  "fresh_lean_export_replay_on_revised_sources": "NOT_RUN",
+  "historical_whole_submission": {
+    "record": "verification/pre-repair.json",
+    "sha256": "ffb758d015c5d7afe0ce91114082f2077c0bc9367af46b92486890695908c3a6",
+    "source_manifest": "verification/lean-source-sha256.json",
+    "source_manifest_sha256": "79d63668c2dd50a58344720a4cad396ad4c551f2b21e5aaf12ba1ce14aa941c9",
+    "scope": "Original port only. All source-binding language inside the preserved record refers to that earlier snapshot.",
+    "build_and_axiom_audit": "PASS_HISTORICAL",
+    "statement_comparison_and_fresh_lean_replay": "PASS_HISTORICAL",
+    "serial_nanoda_replay": "PASS_HISTORICAL_SEPARATE_CONTINUATION_WITH_ENLARGED_MAIN_STACK",
+    "four_worker_nanoda": {
+      "status": "HISTORICAL_STACK_OVERFLOW",
+      "raw_receipt_sha256": "6cab035f76c2c405a8dd13ea95783a6b091b63cdf98a79fb15b0ae4b2b0ffd27",
+      "solution_export_sha256": "b00760ab62d73f8049764ae694dcc918569f8a226eb945fc300004e234686225",
+      "reported_status": "INCOMPLETE"
+    }
+  },
+  "earlier_targeted_verification": {
+    "record": "verification/pre-local-completion.json",
+    "sha256": "5ba65dbcc65750058df347a6b512e6fb6d03333323f4d195f63b821f204b5423",
+    "scope": "Exact earlier verification record; its pending whole-check language describes that earlier stage."
+  },
+  "current_static_checks": {
+    "status": "PASS_STATIC_CHECKS_ONLY",
+    "recorded_utc": "2026-10-24T15:06:06.865079+00:00",
+    "checks": [
+      {
+        "check": "source-policy",
+        "exit_code": 0,
+        "output_sha256": "424c7140f6c81d05a1bea91efa3dd874701398730d06091414c52572052ee516"
+      },
+      {
+        "check": "metadata-and-source",
+        "exit_code": 0,
+        "output_sha256": "8171a08442e3a13d8cc4698102c5f29ec382e1504b474582c51f5ec60585ab74"
+      }
+    ],
+    "input_sha256": {
+      "formalization.yaml": "5fb0c79d520b891792c4d73d9ed6dc66d3198a07938512859e586c67c372f2d6",
+      "lakefile.toml": "45fdc0cab3b385f010163300a761a2bdcef9587e3209a8a740c10920ad2d1624",
+      "lake-manifest.json": "59037d6b91f7677dede4638861b75aa246693b20f17015508204a4c5d125f4b6",
+      "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "tools/source_policy.py": "e091b59059f6e38732da271db3c8566ab1a8fe873f8754b0f40493f7724c4d3c",
+      "tools/proof_sources.py": "9ea04968e328c6b0415251272083c19687250052d241124e4d344390c5e564b7",
+      "tools/shared_setup.py": "41140cceac8b6f4ffb6197c5557ae98489b6a828d6d59e0549fd80123066904b",
+      "tools/resource_guard.py": "8193fa46e93e161bba32e7611c61e4b43c53dbe33845dada8a0f257c0efa6ada",
+      "tools/check.py": "4b75c3e51910b73502ce0f249bcf3d756cf7344b154e76c5c3e119b6b43ae490",
+      "tools/local_compare.py": "2492f6e6f1e37a37520feab79d75f9be9b0685c3ae01632d2d3a84ff67eb0624",
+      "scripts/validate-submission.py": "2fd625552d758cd807494274dcad3cc5a0c86f615c390ca8d23e2bec6b99f732",
+      "scripts/check-lean-sources.py": "6919911f9905fcc9f01cac96e8c98a348a192a5550a10d127b0b3ced2d74bc5a",
+      ".github/workflows/palomar-preflight.yml": "31bd3658559bb8f81644cabb48ae8acc9a2517c7ae00ea03448c6f352c98b048",
+      "comparator.json": "a0b6fcc2f008f270a6a85a24e9154f1af122d59cf4d2c15a1ec042aea8825dc2"
+    },
+    "source_manifest": "verification/lean-source-sha256-current.json",
+    "source_manifest_sha256": "156c13a2ef6cf60e41b83a676e135b3f824fbd29abab218e0d6005a6c26e9df4",
+    "palomar_validator_commit": "ad5db9e7ff8b17523d73aeb244aaeabcde810c64",
+    "additional_source_type_policy": {
+      "repository": "https://github.com/PalomarRegistry/PalomarPolicy",
+      "commit": "28bd48b9b71bbb2a82c718ce761d5a4220ef8e60",
+      "path": "CONTRIBUTING.md"
+    },
+    "scope": "Source policy, metadata/configuration checks, source size/header scan, source manifest rehash, and Python syntax checks. No Lean compilation or kernel replay."
+  },
+  "local_resource_policy": {
+    "scope": "One supervised process group; separate reviewed completion driver.",
+    "sampled_aggregate_rss_limit_kib": 6291456,
+    "maximum_compiler_processes": 2,
+    "nanoda_workers": 4,
+    "per_compiler_and_export_deadline_seconds": 120,
+    "build_deadline_seconds": 10800,
+    "nanoda_deadline_seconds": 7200,
+    "required_host_pressure_level": 1,
+    "minimum_host_reported_free_percent": 25,
+    "limitations": "Sampled safeguards, not an OS hard memory cap."
+  },
+  "full_palomar_preflight": {
+    "status": "NOT_RUN",
+    "reason": "The hosted workflow has not run. It is required before agent API intake; human form intake starts Palomar verification after authentication.",
+    "workflow": ".github/workflows/palomar-preflight.yml"
+  },
+  "publication": "NOT_SUBMITTED_TO_PALOMAR",
+  "submission_selection": {
+    "status": "UNCHANGED_THEOREMS_SELECTED_FROM_PREVIOUSLY_CHECKED_SUPERSET",
+    "configuration": "comparator.json",
+    "configuration_sha256": "a0b6fcc2f008f270a6a85a24e9154f1af122d59cf4d2c15a1ec042aea8825dc2",
+    "theorems": [
+      "SuperpermutationUpper.finite_bound",
+      "SuperpermutationUpper.asymptotic_bound"
+    ],
+    "previous_configuration": "verification/compared-configuration-nine.json",
+    "previous_configuration_sha256": "7138139503fc3e409f913887cc2960a71891f4da96cda9af928c5b3e5dc04cb4",
+    "previous_verification": "verification/pre-submission-selection.json",
+    "previous_verification_sha256": "fc251d09c2df0baca529aff4e0e7716dbc20e99c1f32615cf8f9ce0357a476b0",
+    "proof_sources": "All 681 Lean files match the complete-build and NanoDa source manifest byte for byte.",
+    "scope": "Only the configured theorem list was reduced from nine to two. The existing complete proof checks cover both selected claims. No fresh Comparator or kernel run is claimed for this configuration."
+  }
+}

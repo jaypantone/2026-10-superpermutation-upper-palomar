@@ -1,0 +1,111 @@
+version: v0.4
+project:
+  name: A smaller upper bound for superpermutations
+  description: For the shortest superpermutation length S(n), construct covering words with asymptotic
+    bound S(n) <= n! + (n-1)! + (n-2)! + (926683/1814400 + o(1))(n-3)!. The development proves an explicit
+    finite bound for every n >= 14 and its numerical consequences. The coefficient is approximately 0.510738.
+    The argument combines a finite selection, a verified connector cover, and transport to larger alphabets.
+  authors:
+  - Jay Pantone
+  license: Apache-2.0
+  responsible_maintainers:
+  - Jay Pantone
+repository:
+  role: substantive-development
+classification:
+  arxiv:
+  - math.CO
+  msc2020:
+  - 05A05
+  - 68R15
+  - 03B35
+sources:
+- title: A smaller upper bound for superpermutations
+  authors:
+  - Jay Pantone
+  id: https://github.com/jaypantone/2026-10-superpermutation-bounds/tree/c9ccb6a0d9ddd1007fdce6efab50807ec47464b9/papers/upper/upper-bounds.tex
+  type: paper
+  relationship: formalizes
+  note: The manuscript and previous Lean development accompany the private October 2026 source release
+    at the pinned revision. This repository contains the substantive proof development ported to a supported
+    Lean release; it is not merely a wrapper around a private dependency. The result is carried forward,
+    not claimed as first discovered in this port.
+  license: Apache-2.0
+  location: Also included at papers/upper/upper-bounds.tex.
+- title: Superpermutations with (n-3)! coefficient 43/80
+  authors:
+  - Jay Pantone
+  id: https://github.com/jaypantone/superperm-upper-43-80/tree/c8fb7ffdd69be1375580710ae11b47a295b1f0f6
+  type: other
+  relationship: background
+  note: Underlying superpermutation construction and library.
+- title: 'Superpermutations: finite selections and block replacements'
+  authors:
+  - Jakub Halfar
+  id: https://github.com/jhalfar/superpermutations/tree/cc5c763bd5854317b20dadb138990802656e6f03
+  type: other
+  relationship: background
+  note: Finite selections and block replacement ideas contribute to the improved upper construction. Exact
+    credits are retained in the paper and source notices.
+- title: New upper bound with 1771/3456 and new lower bounds for n = 8 to 14, both in Lean
+  authors:
+  - Jakub Halfar
+  id: https://groups.google.com/g/superpermutators/c/6ozhk3faHDA
+  type: web discussion
+  relationship: background
+  note: 6 October 2026 announcement; the upper coefficient is compared with the result presented here.
+- title: Shorter words and compact recipes for superpermutations
+  authors:
+  - William Echols
+  - Theo H.
+  - Jakub Halfar
+  id: https://groups.google.com/g/superpermutators/c/iIgHJwUc9ww
+  type: web discussion
+  relationship: background
+  note: October 2026 discussion of finite-word improvements, trail openings, phase changes, and compact
+    recipes. These later announcements provide context, not proof dependencies.
+- title: n=8 superpermutation of length 46,174
+  authors:
+  - Jakub Halfar
+  - Theo H.
+  id: https://groups.google.com/g/superpermutators/c/a-oOgxxHHHg
+  type: web discussion
+  relationship: background
+  note: 20 October 2026 announcement and subsequent improvement to 46,173. Context for finite constructions.
+related_formalizations:
+- id: https://github.com/jaypantone/2026-10-superpermutation-bounds/tree/c9ccb6a0d9ddd1007fdce6efab50807ec47464b9
+  relationship: adapts
+  note: Source snapshot for the present curated and ported proof development. The source repository is
+    private at preparation time; no build dependency on it is required.
+status:
+  scope: 'Two compared declarations: the explicit general finite upper bound and its asymptotic coefficient.
+    Seven numerical corollaries and four literal word files are retained as supporting material and are
+    not separate submitted claims. Literal word coverage scans are not compared Lean declarations.'
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex
+    tool_setup: Human-directed AI research and formalization, multiple agents for independent proof review,
+      Lean tactics, and finite certificate generation and checking.
+    prompting_notes: The author requested improvements to superpermutation bounds, independent proof review,
+      complete formalizations, readable mathematical accounts, and a subsequent Palomar-compatible port.
+  notes: The research presented here, the Lean formalization, and this document were generated entirely
+    by AI systems under Jay Pantone's direction. The inherited mathematical work and software retain their
+    original credits. Independent AI review is not human peer review. The research, proof code, computational
+    tools, and exposition were generated using OpenAI Codex. Exact historical model versions and total
+    compute cost were not comprehensively recorded; no estimates are supplied.
+fidelity:
+  divergences: This is a port and reorganization of the pinned source development. The Challenge states
+    the advertised claims directly on finite words. No claim is made that all contents of the earlier
+    combined release are registered by this configuration. The companion scope and provenance documents
+    identify exclusions. The reader-facing informal statement is docs/INFORMAL_STATEMENT.md. The two selected
+    claims are unchanged from the previously verified nine-claim configuration; the other seven are numerical
+    consequences.
+review:
+  status: agent-reviewed; human review status not recorded
+  notes: Independent AI agents reviewed the mathematical arguments and statement interfaces in the preceding
+    development. The precise extent of human checking has not been recorded here; there is no claim of
+    expert peer review. Current build, Comparator and independent-kernel status must be read from the
+    verification records, not inferred from this metadata.
+acknowledgements: Lean, Mathlib, and the mathematical and formalization sources listed here; existing
+  source attribution and licence notices are retained.

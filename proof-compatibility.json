@@ -1,0 +1,66 @@
+{
+  "format_version": 1,
+  "scope": "Six opaque theorem proof bodies only",
+  "original_port_source_provenance_sha256": "deb7045b4917c248713df36ec0bc40620d1f58bada4bd966005f0f0635e4eb4e",
+  "original_port_compatibility_sha256": "8f4e0651bd0332bccc12f4061a99aa4a26e66da24c9079d0f4cbdb8b4ae445cb",
+  "original_source_manifest": "verification/lean-source-sha256.json",
+  "original_source_manifest_sha256": "79d63668c2dd50a58344720a4cad396ad4c551f2b21e5aaf12ba1ce14aa941c9",
+  "current_source_manifest": "verification/lean-source-sha256-current.json",
+  "current_source_manifest_sha256": "156c13a2ef6cf60e41b83a676e135b3f824fbd29abab218e0d6005a6c26e9df4",
+  "mathematical_statement_changes": false,
+  "certificate_data_changes": false,
+  "change": "After rw [rows_blocks], replace rfl by explicit suffix unfolding and List.append_assoc.",
+  "source_check": "Reversing exactly the listed proof body in each file restores its pre-repair bytes; every other Lean file has its pre-repair hash.",
+  "runtime_scope": "One original equality failure was isolated; five analogous changes are preventive. No complete revised replay has run.",
+  "changes": [
+    {
+      "path": "upper/certificate/blockf0_parts/C00.lean",
+      "theorem": "SuperpermutationUpperBound.Native14.Certificate.BlockF0Parts.C00.rows_eq_suffix",
+      "old_file_sha256": "4a2ddad6c9829bc857af81486f31a351917adf809cadf17cc82168634039e567",
+      "candidate_file_sha256": "fabf3e0cac59d4b2e62f9d2f9ffc2c908f9ccd223a761c15998455260cc072ed",
+      "old_proof": "  rw [rows_blocks]\n  rfl",
+      "new_proof": "  rw [rows_blocks]\n  simp only [suffix00, suffix01, suffix02, suffix03, suffix04, suffix05, suffix06, suffix07, suffix08, suffix09, suffix10, suffix11, suffix12, suffix13, suffix14, suffix15, List.append_assoc]"
+    },
+    {
+      "path": "upper/certificate/halfar0_parts/C00.lean",
+      "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C00.rows_eq_suffix",
+      "old_file_sha256": "cc0d524cd27d4fca5f71eaeb39a1aaa047b755c6119cb9c246e61302a570fbfc",
+      "candidate_file_sha256": "b724332389bd757a2c036404a54f7630b5f5696112a451f5cb714c39bb700be1",
+      "old_proof": "  rw [rows_blocks]\n  rfl",
+      "new_proof": "  rw [rows_blocks]\n  simp only [suffix00, suffix01, suffix02, suffix03, suffix04, suffix05, suffix06, suffix07, suffix08, suffix09, suffix10, suffix11, suffix12, suffix13, suffix14, suffix15, List.append_assoc]"
+    },
+    {
+      "path": "upper/certificate/halfar0_parts/C01.lean",
+      "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C01.rows_eq_suffix",
+      "old_file_sha256": "f58ba35125460bfa7c59ef4a935c625c3a528895cbb40bfc872f4aa19d79b65f",
+      "candidate_file_sha256": "40bf7d84c7bcd705010919204831d743c999bcf510cd5425141446fbbb5eb859",
+      "old_proof": "  rw [rows_blocks]\n  rfl",
+      "new_proof": "  rw [rows_blocks]\n  simp only [suffix00, suffix01, suffix02, suffix03, suffix04, suffix05, suffix06, suffix07, suffix08, suffix09, suffix10, suffix11, suffix12, suffix13, suffix14, suffix15, List.append_assoc]"
+    },
+    {
+      "path": "upper/certificate/halfar0_parts/C02.lean",
+      "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C02.rows_eq_suffix",
+      "old_file_sha256": "c8272e63c581ce2f199e3c863fbf5a48c63fff6038e6558d5dd2502603e98422",
+      "candidate_file_sha256": "23618795bcaaebc27536bceaf984251932a192f031cb422bf4237e98973d37aa",
+      "old_proof": "  rw [rows_blocks]\n  rfl",
+      "new_proof": "  rw [rows_blocks]\n  simp only [suffix00, suffix01, suffix02, suffix03, suffix04, suffix05, suffix06, suffix07, suffix08, suffix09, suffix10, suffix11, suffix12, suffix13, suffix14, suffix15, List.append_assoc]"
+    },
+    {
+      "path": "upper/certificate/halfar0_parts/C03.lean",
+      "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C03.rows_eq_suffix",
+      "old_file_sha256": "aa3a252f7c119e1d4d72b71ad4e5bf0397d38f4e99cfd04ec52f92f69c1268a5",
+      "candidate_file_sha256": "3dc0cb0a479677d1c542d9824cc7fc37da873278e9b487468acfd5a6c934bf64",
+      "old_proof": "  rw [rows_blocks]\n  rfl",
+      "new_proof": "  rw [rows_blocks]\n  simp only [suffix00, suffix01, suffix02, suffix03, suffix04, suffix05, suffix06, suffix07, suffix08, suffix09, suffix10, suffix11, suffix12, suffix13, suffix14, suffix15, List.append_assoc]"
+    },
+    {
+      "path": "upper/certificate/halfar0_parts/C04.lean",
+      "theorem": "SuperpermutationUpperBound.Native14.Certificate.Halfar0Parts.C04.rows_eq_suffix",
+      "old_file_sha256": "b3e73d64748ff553034655f70765af8b5a4d60c1a08b5597e733b84c564d7a6b",
+      "candidate_file_sha256": "68a56b829e18a8c62043c2802a5c0787ea668ca5c6ac1ef23f3d379a89404cd8",
+      "old_proof": "  rw [rows_blocks]\n  rfl",
+      "new_proof": "  rw [rows_blocks]\n  simp only [suffix00, suffix01, suffix02, suffix03, suffix04, suffix05, suffix06, suffix07, List.append_assoc]"
+    }
+  ],
+  "verification": "verification.json"
+}

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "date_utc": "2026-10-09",
+  "checker_source": "tools/check_coverage.cpp",
+  "checker_source_sha256": "5de835875cc6ee2423ea8db60747aff25b1203f78c14f60982294b339d79b4bf",
+  "checker_binary_sha256": "32ed7f948251fddadf4ece610bbd017726cddfeb1b3491bfb9aba89a06d65e4a",
+  "checks": [
+    {
+      "symbols": 10,
+      "length": 4034857,
+      "valid_occurrences": 3631149,
+      "distinct_permutations": 3628800,
+      "missing_permutations": 0,
+      "expected_permutations": 3628800,
+      "coverage_bytes": 453600,
+      "coverage_complete": true,
+      "seconds": 0.116244,
+      "raw_sha256": "282ec41ec0eb957f615694046b599a61800acdb567d87d9ed61dafccea77a673",
+      "alphabet": "0123456789"
+    },
+    {
+      "symbols": 11,
+      "length": 43930548,
+      "valid_occurrences": 39936568,
+      "distinct_permutations": 39916800,
+      "missing_permutations": 0,
+      "expected_permutations": 39916800,
+      "coverage_bytes": 4989600,
+      "coverage_complete": true,
+      "seconds": 1.35204,
+      "raw_sha256": "ea54673b0c84d2e75bf22e0e9cd0f2c87518a13d784d56b564844f25ad9ac0a7",
+      "alphabet": "0123456789A"
+    },
+    {
+      "symbols": 12,
+      "length": 522737007,
+      "valid_occurrences": 479178987,
+      "distinct_permutations": 479001600,
+      "missing_permutations": 0,
+      "expected_permutations": 479001600,
+      "coverage_bytes": 59875200,
+      "coverage_complete": true,
+      "seconds": 18.4138,
+      "raw_sha256": "2ddb9ff55274c5bbd4562b524303e3988faed29fd3f58513f134f954aef86c37",
+      "alphabet": "0123456789AB"
+    },
+    {
+      "symbols": 13,
+      "length": 6747802736,
+      "valid_occurrences": 6228818046,
+      "distinct_permutations": 6227020800,
+      "missing_permutations": 0,
+      "expected_permutations": 6227020800,
+      "coverage_bytes": 778377600,
+      "coverage_complete": true,
+      "seconds": 277.584,
+      "raw_sha256": "cec1d6a5058bb6b4130a19c1a0d21e4a17de442274bcff51e09dd22f31b6d056",
+      "alphabet": "0123456789ABC"
+    }
+  ],
+  "scope": "Fresh literal permutation-coverage scans of the exact decoded bytes; no deletion or optimality claim."
+}

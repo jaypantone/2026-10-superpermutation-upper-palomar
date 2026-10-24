@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "words": [
+    {
+      "symbols": 10,
+      "length": 4034857,
+      "alphabet": "0123456789",
+      "path": "words/10/superpermutation-10-4034857.txt",
+      "format": "raw",
+      "bytes": 4034857,
+      "sha256": "282ec41ec0eb957f615694046b599a61800acdb567d87d9ed61dafccea77a673",
+      "raw_bytes": 4034857,
+      "raw_sha256": "282ec41ec0eb957f615694046b599a61800acdb567d87d9ed61dafccea77a673",
+      "final_lf": false
+    },
+    {
+      "symbols": 11,
+      "length": 43930548,
+      "alphabet": "0123456789A",
+      "path": "words/11/superpermutation-11-43930548.txt",
+      "format": "raw",
+      "bytes": 43930548,
+      "sha256": "ea54673b0c84d2e75bf22e0e9cd0f2c87518a13d784d56b564844f25ad9ac0a7",
+      "raw_bytes": 43930548,
+      "raw_sha256": "ea54673b0c84d2e75bf22e0e9cd0f2c87518a13d784d56b564844f25ad9ac0a7",
+      "final_lf": false
+    },
+    {
+      "symbols": 12,
+      "length": 522737007,
+      "alphabet": "0123456789AB",
+      "path": "words/12/superpermutation-12-522737007.txt.xz",
+      "format": "xz",
+      "bytes": 3567672,
+      "sha256": "06eca9cad2205fb74414d3a2448569642809650850b1fec0119937b81c68a063",
+      "raw_bytes": 522737007,
+      "raw_sha256": "2ddb9ff55274c5bbd4562b524303e3988faed29fd3f58513f134f954aef86c37",
+      "final_lf": false,
+      "compression": {
+        "delta_distance": 12,
+        "preset": 9,
+        "extreme": true,
+        "dictionary_mib": 256,
+        "lc": 4,
+        "lp": 0,
+        "pb": 0,
+        "integrity": "sha256",
+        "mode": "serial-python",
+        "worker_limit": 1
+      }
+    },
+    {
+      "symbols": 13,
+      "length": 6747802736,
+      "alphabet": "0123456789ABC",
+      "path": "words/13/superpermutation-13-6747802736.txt.xz",
+      "format": "xz",
+      "bytes": 38894784,
+      "sha256": "ec6fec96b5c221e512824d991d1feaf37db505a4c1e64b372014ee69cf7835d4",
+      "raw_bytes": 6747802736,
+      "raw_sha256": "cec1d6a5058bb6b4130a19c1a0d21e4a17de442274bcff51e09dd22f31b6d056",
+      "final_lf": false,
+      "compression": {
+        "delta_distance": 13,
+        "preset": 9,
+        "extreme": true,
+        "dictionary_mib": 256,
+        "lc": 4,
+        "lp": 0,
+        "pb": 0,
+        "integrity": "sha256",
+        "mode": "block-parallel-xz",
+        "worker_limit": 3,
+        "block_mib": 512,
+        "encoder": "xz 5.8.4",
+        "xz_memory_limit_gib": 16
+      }
+    }
+  ]
+}

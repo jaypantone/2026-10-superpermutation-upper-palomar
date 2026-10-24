@@ -1,0 +1,25 @@
+Superpermutation upper bounds
+
+This repository presents the improved upper construction from Jay Pantone's
+superpermutation research. The underlying completion, transport, connector,
+and word-assembly library accompanies:
+https://github.com/jaypantone/superperm-upper-43-80
+
+The proof sources and explicit words were curated from the combined release
+https://github.com/jaypantone/2026-10-superpermutation-bounds
+at commit c9ccb6a0d9ddd1007fdce6efab50807ec47464b9. That source snapshot may
+remain private; the substantive supporting proofs needed by this repository
+are included here. This is a migration and submission package for the same
+mathematical results, not a claim of an additional improvement.
+
+Jakub Halfar's finite selections and replacement construction contribute to
+the general upper bound. The explicit words also build on his selections
+X, E and N, and the ten-symbol word follows the mixed-trail organization
+contributed by rumstd to the earlier repository. The paper and
+words/README.md identify the inherited ingredients and the improvements.
+Halfar's construction repository is:
+https://github.com/jhalfar/superpermutations
+
+The sources, paper, word files, and certificates are distributed under
+Apache License 2.0. Existing source notices are preserved. Lean and Mathlib
+are external dependencies with their own licenses and notices.

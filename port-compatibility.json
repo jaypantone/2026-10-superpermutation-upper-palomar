@@ -1,0 +1,52 @@
+{
+  "source_commit": "c9ccb6a0d9ddd1007fdce6efab50807ec47464b9",
+  "target_toolchain": "leanprover/lean4:v4.35.0",
+  "mathematical_statement_changes": false,
+  "certificate_data_changes": false,
+  "changes": [
+    {
+      "scope": "678 supporting proof modules",
+      "change": "Adopt Lean's module system: module header, public imports, and an exposed public section. Explicit private declarations remain private."
+    },
+    {
+      "scope": "Former internal Challenge module and its imports",
+      "change": "Rename to UpperBoundProof.Statement so the independent submission Challenge has its own module name."
+    },
+    {
+      "scope": "SuperpermutationUpperBound/Partition/SeedBase.lean",
+      "change": "Replace `by simpa using hl.ge` by `by simpa [hl]` for the unchanged length inequality; the former field-notation spelling no longer elaborates in the pinned version."
+    },
+    {
+      "scope": "SuperpermutationUpperBound/Assembly/ImbalanceCounts.lean",
+      "change": "Add the explicit import Mathlib.Algebra.BigOperators.Ring.Finset, which supplies Nat.cast_sum under the pinned Mathlib module visibility. All proof bodies and theorem statements are unchanged."
+    },
+    {
+      "scope": "240 files under upper/pointers/chunks/",
+      "change": "Replace 3828 closed rangeCheck leaf proofs `by rfl` by `by decide +kernel`. All encoded witness integers, offsets, definitions, theorem statements, length proofs, and aggregate assembly proofs are unchanged. Each leaf still checks at most 32 incidences. This uses ordinary kernel evaluation, not native_decide."
+    },
+    {
+      "scope": "upper/Results.lean and upper/Base.lean comments",
+      "change": "Clarify that the finite certificate is kernel checked and Native14 names the fourteen-symbol base construction, not native evaluation."
+    },
+    {
+      "scope": "Independent Challenge module documentation",
+      "change": "Describe the fourteen-symbol base construction rather than a fourteen-symbol selection; the finite selection is on thirteen symbols. Formal definitions and statements are unchanged."
+    }
+  ],
+  "performance_evidence": {
+    "scope": "One isolated 512-incidence pointer batch, same pinned toolchain and resource limits; not a guarantee for every batch or full replay.",
+    "original_seconds": 41.696,
+    "kernel_leaf_seconds": 23.43,
+    "original_public_object_bytes": 128840,
+    "kernel_leaf_public_object_bytes": 128840,
+    "original_private_object_bytes": 43856,
+    "kernel_leaf_private_object_bytes": 53312,
+    "kernel_leaf_sampled_peak_rss_kib": 1239440,
+    "pilot_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "interpretation": "Avoids a redundant elaborator evaluation of closed checks while retaining ordinary kernel proof checking. Full migrated-result verification is recorded separately."
+  }
+}
