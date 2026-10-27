@@ -1,7 +1,6 @@
 name = "superpermutation_upper_palomar"
 version = "0.1.0"
-defaultTargets = ["Challenge", "Solution", "AxiomCheck"]
-moreLeanArgs = ["-j1", "-M4096"]
+defaultTargets = ["AlmanacSolution", "AlmanacAxioms"]
 
 [[require]]
 name = "mathlib"
@@ -21,3 +20,21 @@ name = "AxiomCheck"
 name = "UpperConstruction"
 roots = []
 globs = ["upper.+", "SuperpermutationUpperBound.+", "UpperBoundProof.+"]
+
+[[lean_lib]]
+name = "AlmanacDefs"
+
+[[lean_lib]]
+name = "AlmanacStatement"
+
+[[lean_lib]]
+name = "AlmanacChallenge"
+
+[[lean_lib]]
+name = "AlmanacSolution"
+
+[[lean_lib]]
+name = "AlmanacAdapter"
+
+[[lean_lib]]
+name = "AlmanacAxioms"
