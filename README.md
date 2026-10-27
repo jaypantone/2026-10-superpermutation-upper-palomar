@@ -1,5 +1,7 @@
 # A smaller upper bound for superpermutations
 
+The Almanac entry point is `almanac_claim` in [AlmanacSolution.lean](AlmanacSolution.lean). It proves the general finite construction bound, the asymptotic bound, and seven numerical existence consequences. See [BUILD.md](docs/BUILD.md) for build commands and verification.
+
 A superpermutation on n symbols contains every permutation of those symbols
 as a contiguous factor. Write S(n) for its minimum possible length and
 F₃(n) = n! + (n−1)! + (n−2)!. This repository proves
