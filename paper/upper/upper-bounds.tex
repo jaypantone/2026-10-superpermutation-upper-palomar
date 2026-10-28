@@ -1,0 +1,671 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage{siunitx}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{xcolor}
+\sisetup{group-separator={,},group-minimum-digits=4}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\F}{F_3}
+\newcommand{\Slice}{\mathcal S}
+\newcommand{\Chart}{\mathcal H}
+\newcommand{\word}[1]{\texttt{#1}}
+\DeclareMathOperator{\rot}{rot}
+\newcommand{\lam}{\frac{926683}{1814400}}
+\newcommand{\gam}{\frac{30571}{1814400}}
+\title{A smaller upper bound for superpermutations}
+\author{Jay Pantone}
+\date{October 2026}
+\hypersetup{pdftitle={A smaller upper bound for superpermutations},pdfauthor={Jay Pantone}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct superpermutations of length
+\[
+ n!+(n-1)!+(n-2)!+
+ \left(\frac{926683}{1814400}+o(1)\right)(n-3)!.
+\]
+The coefficient is approximately $0.510738$, improving our earlier
+$43/80$. The construction uses the same completion and transport operations,
+with a different finite selection and a smaller family of connector cycles.
+An explicit version applies for every $n\ge14$. The finite certificate,
+its extension to all larger alphabets, and the resulting word-existence
+bounds are verified in Lean. We also give explicit words on ten through
+thirteen symbols, checked directly for permutation coverage.
+\end{abstract}
+
+\paragraph{AI disclosure.}
+The research presented here, the Lean formalization, and this document were generated entirely by AI systems under Jay Pantone's direction. The inherited mathematical work and software retain their original credits. Independent AI review is not human peer review.
+
+\section{The bound}
+
+A word can contain many permutations without repeating all of their
+letters. For example, \word{123121321} contains each of the six permutations
+of $\{1,2,3\}$ as a contiguous substring. A word with this property for an
+alphabet of $n$ symbols is a \emph{superpermutation}. We write $S(n)$ for
+the least possible length and put
+\[
+ \F(n)=n!+(n-1)!+(n-2)!.
+\]
+Our concern here is the next factorial term in an upper bound for $S(n)$.
+
+The construction of Pantone~\cite{pantone} gives coefficient $43/80$ on
+$(n-3)!$. Its main idea is to cover most permutations with long pieces
+whose ends fit together, repair the omitted permutations, and then join
+the resulting closed trails. There are two substantial costs. Omitting
+permutations from a piece makes it easier to join, but those permutations
+must later be restored. Connector cycles join many of the remaining
+trails at once. The coefficient is the sum of these two costs.
+
+Halfar~\cite{halfar} improved the finite selection used in this construction
+and introduced replacements inside prescribed cyclic blocks. Our new
+selection uses that replacement method, followed by an optimized family
+of connector cycles. The completion, transport, and final joining
+arguments are those of the earlier construction. The improvement is in
+the finite object to which they are applied.
+
+\begin{theorem}\label{thm-asymptotic}
+For every $\varepsilon>0$ there is an $N$ such that
+\[
+ S(n)\le \F(n)+\left(\lam+\varepsilon\right)(n-3)!
+ \qquad\text{for every }n\ge N.
+\]
+\end{theorem}
+
+The reduction from $43/80$ is exactly $48557/1814400$. Halfar's
+October 2026 construction has coefficient $1771/3456$; the reduction from
+that coefficient is $773/453600$. The coefficient proved here is still larger
+than $1/2$. The comparisons in this paper concern the specified
+constructions and announced results; no current-record claim is made.
+
+The finite form of the theorem is useful independently of its asymptotic
+consequence. The parameter $\ell$ is the number of letters overlapped when
+we join the final pieces.
+
+\begin{theorem}\label{thm-finite}
+Let $n\ge14$, let $0\le\ell\le n-4$, and put
+$c=\gam(n-4)!$. Then
+\[
+ \begin{split}
+ S(n)\le {}&\F(n)+\lam(n-3)!+(n-4-\ell)c\\
+ &\hspace{20mm}+\ell\min\left(c,\frac{(n-1)!}{(n-1-\ell)!}\right).
+ \end{split}
+\]
+\end{theorem}
+
+Taking $\ell=n-11$ gives the values in Table~\ref{tab-finite}. These are
+bounds on the lengths of words whose existence is proved by the
+construction. There is no need to write out those words to prove the
+bounds. The much smaller files described in Section~\ref{sec-words}
+contain actual words on ten through thirteen symbols.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrr}
+\toprule
+$n$ & $\ell$ & Upper bound on $S(n)$\\
+\midrule
+14 & 3 & \num{93905133768}\\
+15 & 4 & \num{1401329128342}\\
+16 & 5 & \num{22320881220264}\\
+17 & 6 & \num{377963186649048}\\
+18 & 7 & \num{6779662770937056}\\
+19 & 8 & \num{128414015952702480}\\
+20 & 9 & \num{2561133914781361920}\\
+\bottomrule
+\end{tabular}
+\caption{Consequences of Theorem~\ref{thm-finite}, all verified in Lean.}
+\label{tab-finite}
+\end{table}
+
+We first describe the pieces and the operations that allow a finite
+construction to work on every larger alphabet. The new selection and
+its connector certificate are then small enough to describe in terms of
+five source trails. The final section treats the explicit words and their
+verification.
+
+\section{Pieces that fit together}\label{sec-pieces}
+
+Fix an alphabet of $k\ge4$ symbols. For a permutation $p$, let $[p]$ be its
+\emph{cyclic class}, the set of its $k$ rotations, and let $\rot$ denote
+left rotation. Consecutive rotations overlap in $k-1$ letters, so all of
+$[p]$ can be read in a word of length $2k-1$.
+
+Choose a distinguished symbol $s$, and let $x$ order the other $k-1$
+symbols. The \emph{2-loop} determined by $(x,s)$ visits
+\[
+ [xs],\ [\rot(x)s],\ \ldots,\ [\rot^{k-2}(x)s]
+\]
+in that order. Within a class it starts at $\rot^j(x)s$ and follows
+rotations until it reaches $s\rot^j(x)$. The transition to
+$\rot^{j+1}(x)s$ then costs two new letters. Replacing $x$ by a rotation
+changes only the starting point of the loop. With $s$ fixed, the
+$(k-2)!$ such loops partition the permutations.
+
+A \emph{slice} $\Slice(x,s;L)$ takes the first $L$ classes of this loop.
+Its word has length
+\[
+ 2k-1+(L-1)(k+1)=(k+1)L+k-2.
+\]
+For example, $\Slice(123,4;1)$ spells \word{1234123}. It contains the
+class $[1234]$ and omits the classes $[2314]$ and $[3124]$. A slice is
+\emph{full} when $L=k-1$ and \emph{short} when $L=k-3$.
+
+The first and last $k-3$ letters of a slice are its \emph{head} and
+\emph{tail}. A slice can be followed by another whose head is its tail,
+with an overlap of $k-3$ letters. In the example the head is \word{1}
+and the tail is \word{3}. We regard a slice as a directed edge from its
+head to its tail.
+
+A \emph{selection} chooses a full or short slice from every 2-loop with
+distinguished symbol $s$. Its \emph{charge} is twice the number of short
+slices. Thus the charge $Q$ counts the cyclic classes that the selection
+omits. Our selections have balanced endpoint graphs, so their slices can
+be partitioned into closed trails. We retain a particular such partition,
+since the way the trails behave when a letter is added is essential.
+For a closed trail $T$, write $f(T)$ and $t(T)$ for its numbers of full
+and short slices, and call $f(T)-t(T)$ its \emph{signed excess}.
+
+One simple closed trail will be used repeatedly. Let $y$ be a word of
+$h$ distinct symbols, and let $a,s$ be two further symbols. The full slices
+\[
+ \Slice(\rot^j(y)a,s;h+1),\qquad 0\le j<h,
+\]
+form a closed trail, which we denote by $\Chart(y;a,s)$. For example,
+$\Chart(123;4,5)$ has heads \word{12}, \word{23}, and \word{31}, and
+its tails are the same three words in the next cyclic order. We call this
+a \emph{full chart}. Its charge is zero and its signed excess is $h$.
+
+\subsection{Completion}
+
+Completion adds a final symbol $z$ and fills in every omitted cyclic
+class. If $x=x_0\cdots x_{k-2}$, write $x^{(i)}$ for the result of
+inserting $z$ immediately before $x_i$. The slice $\Slice(x,s;L)$ gives
+$k-1$ inserted slices. The one with base $x^{(i)}$ has $L+1$ classes if
+$i<L$, and $L$ classes otherwise. For each omitted class
+$[\rot^i(x)s]$, add the full slice with distinguished symbol $z$ and base
+$\rot^i(x)s$.
+
+Deleting $z$ explains the construction. Each old cyclic class has $k$
+extensions, according to the position of $z$ in its cyclic order. In an
+inserted 2-loop, deletion lists the old classes in order, except that one
+class occurs twice. The extra class in an inserted slice accounts for this
+repetition precisely when the repeated class was selected. A repair slice
+contains all $k$ extensions of one omitted class. Consequently completion
+contains every new cyclic class exactly once.
+
+The inserted and repair slices from one old slice form $k-2$ paths.
+Their initial vertices are the ways to insert $z$ into the old head, and
+their terminal vertices are the ways to insert $z$ into the old tail.
+Number the positions $0,\ldots,k-3$. A short slice sends position $p$ to
+$p+1$, and a full slice sends it to $p-1$, modulo $k-2$. Thus the paths
+along a closed trail $T$ close after following an orbit of the translation
+\[
+ p\longmapsto p-f(T)+t(T)\pmod{k-2}.
+\]
+In particular, completion produces $\gcd(k-2,f(T)-t(T))$ closed trails
+from $T$.
+
+If the resulting alphabet has size $n=k+1$, completion has
+$(n-2)!+Q$ slices, covering $(n-1)!$ cyclic classes. After its head, a
+slice with $L$ classes contributes $(n+1)L+1$ letters. The total
+contribution of the completed slices, before any cost for opening or
+joining trails, is therefore
+\begin{equation}\label{eq-slice-cost}
+ (n+1)(n-1)!+(n-2)!+Q=\F(n)+Q.
+\end{equation}
+This identity is the reason for measuring a selection by its charge.
+
+\subsection{Transport}
+
+To use the same selection on a larger alphabet, we need an operation
+that again produces full and short slices. \emph{Transport} adds a new
+ordinary symbol $w$ while retaining $s$. A full slice gives all $k-1$
+full slices obtained by inserting $w$ before a symbol of $x$. For a short
+slice, write $x=uab$. Use the corresponding short slices, except that
+the base $uawb$ is replaced by its rotation $buaw$.
+
+For example, transporting $\Slice(123,4;1)$ with the new symbol $5$
+gives short slices with bases \word{5123}, \word{1523}, and \word{3125}.
+Their endpoint paths are
+\[
+ \word{51}\longrightarrow\word{35},\qquad
+ \word{15}\longrightarrow\word{31}\longrightarrow\word{53}.
+\]
+The same insertion-position rule holds as for completion. The exceptional
+rotation is what makes the second path fit together.
+
+Transport gives one slice in each extension of the old 2-loop, so it
+preserves the selection property. It multiplies charge by $k-1$.
+If $k-2$ divides the signed excess of each old trail, each trail gives
+$k-2$ closed trails, one for each insertion position. Each new trail has
+signed excess
+\begin{equation}\label{eq-excess}
+ \frac{k-1}{k-2}\bigl(f(T)-t(T)\bigr),
+\end{equation}
+which is divisible by $k-1$. This condition can therefore be maintained
+through arbitrarily many transports. These transport and completion
+statements, including the occurrence-by-occurrence inventories, are
+proved in Pantone~\cite{pantone}.
+
+\section{Connectors and the cost of joining}\label{sec-join}
+
+After completion to $n$ symbols, the endpoint words have length
+$h=n-3$. A \emph{connector cycle} is the cycle of rotations of a word
+of $h$ distinct symbols. Each of its $h$ edges appends one letter. If
+a connector meets a closed trail at an endpoint, it can be spliced into
+that trail. A connector may meet several trails, and this is where the
+main saving occurs.
+
+There are two kinds of connector incidences used by the construction.
+A connector containing the completion symbol $z$ meets an actual endpoint
+of a completed trail. A connector not containing $z$ is the cycle of
+$y$ for a parent full chart $\Chart(y;a,s)$. This cycle meets every trail
+obtained by completing that chart. Both kinds of incidence persist under
+transport. A connector of length $h$ gives $h$ new connector cycles of
+length $h+1$, one for each gap in which the new ordinary symbol can be
+inserted. The first case follows by tracking the two insertion positions,
+for the ordinary symbol and for $z$. The second follows by transporting
+the full chart. This is the connector transport theorem of
+Pantone~\cite{pantone}; its two incidence hypotheses are part of the
+statement.
+
+For clarity, we record exactly the consequence that is needed here.
+
+\begin{proposition}[Transport and joining]\label{prop-transport}
+Let $n_0\ge5$. Suppose a balanced selection on $n_0-1$ symbols, with distinguished
+symbol $s$, has charge $Q_0$ and a partition into closed trails whose
+signed excesses are divisible by $n_0-3$. Suppose its completion is met
+by $c_0$ connector cycles of length $n_0-3$, none containing $s$, with
+each designated incidence of one of the two kinds described above.
+Then for every $n\ge n_0$ the transported selection has charge
+\[
+ Q_n=Q_0\frac{(n-3)!}{(n_0-3)!},
+\]
+and its completion has a connector cover of size
+\[
+ c_n=c_0\frac{(n-4)!}{(n_0-4)!}.
+\]
+For every $0\le\ell\le n-4$, it gives a superpermutation of length at most
+\[
+ \F(n)+Q_n+(n-3)c_n+(n-4-\ell)c_n
+       +\ell\min\left(c_n,\frac{(n-1)!}{(n-1-\ell)!}\right).
+\]
+\end{proposition}
+
+\begin{proof}
+The formulas for $Q_n$ and $c_n$ follow by multiplying the factors in
+successive transports. The divisibility in~\eqref{eq-excess} preserves
+closed trails, and the connector transport theorem preserves their cover.
+It remains to account for the final joining cost.
+
+At a fixed size $n$, put the completed slices and the connector edges
+into a directed multigraph on endpoint words. The graph is balanced.
+Every connected component contains a connector, because every completed
+trail meets one. Hence the number $b$ of components is at most $c_n$.
+Choose a connector in each component, take an Eulerian circuit, and remove
+one edge of the chosen connector. The resulting word retains every slice.
+By~\eqref{eq-slice-cost}, the sum of the lengths of these $b$ words is
+\[
+ \F(n)+Q_n+(n-3)c_n+(n-4)b.
+\]
+Here each word starts with $n-3$ letters, and the removed edge saves one.
+
+There is a choice of the removed edges and an ordering into at most
+\[
+ J\le\min\left(b,\frac{(n-1)!}{(n-1-\ell)!}\right)
+\]
+trails of words such that successive words in a trail overlap in $\ell$
+letters. This is the balanced-cut lemma in Pantone~\cite{pantone}.
+Its application can be seen directly from the available cuts. Regard a
+cut as an edge from the first $\ell$ letters of its word to the last
+$\ell$ letters. Giving equal weight to all cuts on a chosen connector
+balances every vertex. The lemma rounds these weights to one cut per
+component with absolute imbalance at most two at each vertex. The chosen
+edges then decompose into at most one trail per vertex. All vertices are
+words of $\ell$ distinct symbols other than $s$, so the stated vertex
+count applies. The case $\ell=0$ is simply concatenation.
+
+The overlaps save $\ell(b-J)$ letters. Thus the total length is at most
+\[
+ \F(n)+Q_n+(n-3)c_n+(n-4-\ell)b+\ell J.
+\]
+Since $n-4-\ell\ge0$, substituting $b\le c_n$ gives the result.
+\end{proof}
+
+The two quantities to minimize are now apparent. The charge contributes
+$Q_0/(n_0-3)!$ to the coefficient, and the connectors contribute
+$c_0/(n_0-4)!$. The remaining joining cost is asymptotically smaller.
+Our finite construction has $n_0=14$ and
+\begin{equation}\label{eq-base-numbers}
+ Q_0=\num{19714464},\qquad c_0=\num{61142}.
+\end{equation}
+The next section establishes the selection, its trail partition, and
+the connector cover that give these numbers.
+
+\section{The finite construction}\label{sec-base}
+
+It is useful to separate the ordinary symbols from the two symbols with
+special roles. The final selection has ordinary alphabet
+$\{0,1,\ldots,11\}$ and distinguished symbol $s=12$. Completion adds
+$z=13$. A row of the finite data consists of an ordering $x$ of the
+ordinary alphabet and an indication of whether the slice is full or short.
+The data specify the order of rows along each source trail.
+
+\subsection{Replacing full charts}
+
+The starting selection, due to Halfar, has eight ordinary symbols.
+It consists of two closed trails $H_0,H_1$, together with 48 full charts.
+The chart words have length seven. The source data have the counts in
+Table~\ref{tab-sources}. In particular, the two trails occupy 4704
+2-loops and the full charts occupy the other $48\cdot7=336$ loops.
+The total is $7!=5040$.
+
+Each of the 48 charts can be treated independently. Transport such a
+chart three times, with three new ordinary symbols. Its 5040 descendant
+2-loops are characterized by the cyclic order that remains after deleting
+the four symbols added to the chart word. This characterization makes it
+possible to replace the slices inside the block without affecting any
+other block.
+
+On eleven ordinary symbols we use three closed trails $B_0,B_1,B_2$.
+Together they occupy 4074 of the 5040 loops of one such block. The other
+966 loops are retained as a list of cyclic bases. On adding the twelfth
+ordinary symbol, transport the three trails and fill each of the 966
+remaining loops with its full chart. Relabel the original seven symbols
+to do this in each of the 48 blocks.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Source trail & Ordinary symbols & Slices & Charge & Signed excess\\
+\midrule
+$H_0$ & 8 & 2280 & 1104 & 1176\\
+$H_1$ & 8 & 2424 & 1248 & 1176\\
+\addlinespace
+$B_0$ & 11 & 714 & 588 & 126\\
+$B_1$ & 11 & 1330 & 560 & 770\\
+$B_2$ & 11 & 2030 & 910 & 1120\\
+\bottomrule
+\end{tabular}
+\caption{The five finite source trails. Charge is twice the number of
+short slices, so signed excess is the number of slices minus the charge.}
+\label{tab-sources}
+\end{table}
+
+The finite assertions about these lists are straightforward to state.
+Every row uses the correct symbols, every slice is full or short, and
+consecutive endpoints agree, including the last and first. The rows of
+$H_0,H_1$ and the 48 charts represent all 5040 cyclic bases on eight
+ordinary symbols. Similarly, the rows of $B_0,B_1,B_2$ and the 966
+remaining bases represent all 5040 cyclic bases of the prescribed block
+on eleven symbols. Representatives are compared up to rotation. These
+coverage assertions, as well as the counts in Table~\ref{tab-sources},
+are checked from the literal lists in the accompanying Lean certificate.
+
+The block replacement preserves a selection, not merely its number of
+rows. Indeed, transport takes the cyclic base of a row to precisely its
+insertion extensions. Consequently equality of the represented cyclic
+bases is preserved by transport and by relabeling. The two finite
+coverage checks therefore prove coverage of the full ordinary alphabet
+after replacement. There are exactly $11!$ rows, one for each cyclic
+base on twelve ordinary symbols, so no base can be repeated.
+
+The resulting row and charge counts can now be obtained without expanding
+the full selection. The unchanged part comes from transporting $H_0,H_1$
+four times. Each replaced block has
+$4074\cdot11+966\cdot11=\num{55440}$ rows and charge
+$2058\cdot11=\num{22638}$. Thus
+\[
+ \begin{aligned}
+ \text{rows}&=4704(8\cdot9\cdot10\cdot11)+48(55440)
+             =\num{39916800}=11!,\\
+ Q_0&=2352(8\cdot9\cdot10\cdot11)+48(22638)
+             =\num{19714464}.
+ \end{aligned}
+\]
+This proves the charge in~\eqref{eq-base-numbers}.
+
+\subsection{The closed trails}
+
+The two Halfar trails have signed excess 1176, divisible by seven.
+Their four transports have $7,8,9,10$ insertion positions, respectively,
+so they give
+\[
+ 2\cdot7\cdot8\cdot9\cdot10=\num{10080}
+\]
+closed trails on twelve ordinary symbols. Their signed excesses are
+divisible by eleven.
+
+Within a replaced block, $B_1$ and $B_2$ each give ten closed trails,
+since their excesses are divisible by ten. The first source trail needs
+a different calculation. Its excess is 126, and a single lap sends an
+insertion position to $p-126=p+4\pmod{10}$. This permutation has two
+orbits,
+\[
+ (0,4,8,2,6),\qquad (1,5,9,3,7).
+\]
+Follow the transported paths through five successive laps of $B_0$,
+starting at 0 and at 1. The two resulting trails are closed and together
+use every transported row exactly once. Five laps have excess 630, so
+each resulting trail has excess $630\cdot11/10=693$, divisible by eleven.
+No row is duplicated by this procedure. The five laps follow five
+different insertion positions, and the two orbits partition all ten.
+
+A replaced block therefore gives $2+10+10+966=988$ trails. Its first
+22 trails come from the three source trails; the other 966 are full
+charts. Altogether the selection has
+\[
+ \num{10080}+48(988)=\num{57504}
+\]
+closed trails, all with signed excess divisible by eleven. Of these,
+$\num{11136}$ come from the five source trails and $\num{46368}$ are
+full charts. Completion gives eleven closed trails from each parent.
+
+\subsection{The connector certificate}
+
+For each of the $\num{46368}$ full charts, use the connector cycle of
+its chart word. This meets all eleven of the chart's completed trails,
+and it has the full-chart incidence required by
+Proposition~\ref{prop-transport}.
+
+The other $\num{11136}\cdot11=\num{122496}$ completed trails are met by
+$\num{14774}$ additional connector cycles. These cycles have length eleven,
+contain the completion symbol 13, and exclude the distinguished symbol 12.
+The finite certificate gives one incidence witness for every pair
+consisting of a parent trail and a completion position. Thus the total
+number of connectors is
+\[
+ c_0=\num{46368}+\num{14774}=\num{61142}.
+\]
+
+An incidence witness is more than a label asserting that two objects
+meet. It specifies a row occurrence in one of the five source trails,
+the insertion positions that lead to the chosen parent, and a rotation
+of one of the listed connector words. Prefix signed excesses determine
+the position on entering the chosen row. The witness checks that the
+head of the resulting completed row is exactly that rotation of the
+connector word.
+
+For the unchanged Halfar part, the occurrence passes through four
+transports. For a replaced block it passes through one transport and
+a relabeling. An occurrence descending from $B_0$ also specifies which
+of the five laps is used. Before that lap, the prefix excess includes
+126 for each preceding lap. The transport identities prove that these
+instructions identify actual row occurrences in the stated parent trail.
+The completion identities then prove the claimed endpoint equality.
+
+The complete witness table is checked in Lean. Its positions fix the
+parent and the completion position independently of the witness stored
+there, so all $\num{122496}$ required pairs are covered. The circle
+indices are checked against the literal list of $\num{14774}$ words.
+This proves the second connector count and all the incidence hypotheses
+of Proposition~\ref{prop-transport}.
+
+\section{The finite and asymptotic bounds}\label{sec-proof}
+
+The construction of Section~\ref{sec-base} satisfies
+Proposition~\ref{prop-transport} with $n_0=14$. Its normalized costs are
+\[
+ \frac{Q_0}{11!}=\frac{889}{1800},\qquad
+ \frac{c_0}{10!}=\gam.
+\]
+Their sum is
+\[
+ \frac{889}{1800}+\gam=\lam.
+\]
+Substituting these two costs in the proposition proves
+Theorem~\ref{thm-finite}.
+
+To deduce Theorem~\ref{thm-asymptotic}, put $m=n-2$ and choose an integer
+$a$ with $2\le a\le m$, so that $\ell=m-a$. After division by
+$(n-3)!=(m-1)!$, the two extra terms in the finite bound are at most
+\begin{equation}\label{eq-error}
+ \gam\frac{a-2}{m-1}
+       +\frac{(m-a)m(m+1)}{(a+1)!}.
+\end{equation}
+Take $a=\lceil\sqrt m\rceil$. The first term tends to zero. For large
+$a$, the last eight factors of $(a+1)!$ are each at least $a/2$, so the
+second term is at most $2^8m^2(m+1)/a^8$, which also tends to zero.
+This proves the theorem.
+
+The formal finite statement uses the parameter $a=n-2-\ell$ and supplies
+an actual covering word on an arbitrary finite alphabet. Its asymptotic
+consequence is stated for positive rational $\varepsilon$; density of the
+rationals gives the formulation for real $\varepsilon$ above. The five
+source trails, the block coverage checks, and the entire incidence table
+are verified by ordinary Lean kernel reduction. No step in this upper
+proof uses \texttt{native\_decide}. The final declarations use only
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+The programs that exported the finite data are not proof assumptions.
+The Palomar submission selects Theorems~\ref{thm-finite}
+and~\ref{thm-asymptotic}; the numerical corollaries are supporting material.
+The public statements and their proofs are in
+\path{Challenge.lean} and
+\path{Solution.lean}.
+The finite data and their checks are in \path{upper/}.
+
+\section{Explicit words on ten through thirteen symbols}\label{sec-words}
+
+The general theorem uses a uniform estimate for the cost of joining
+components. For a particular alphabet, one can choose the cuts and the
+order directly. Table~\ref{tab-words} gives the four explicit words
+distributed with this paper.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrr}
+\toprule
+$n$ & Word length & Length minus $\F(n)$\\
+\midrule
+10 & \num{4034857} & \num{2857}\\
+11 & \num{43930548} & \num{22068}\\
+12 & \num{522737007} & \num{189807}\\
+13 & \num{6747802736} & \num{1863536}\\
+\bottomrule
+\end{tabular}
+\caption{Explicit words distributed with this paper. Their coverage is
+checked directly, separately from the Lean existence theorems.}
+\label{tab-words}
+\end{table}
+
+The optimization can be separated into two decisions. Once the cyclic
+pieces and their order are fixed, the choice of openings is a finite
+shortest-path problem. Put every permitted opening of the $i$th piece
+in layer $i$. The edge to an opening of the next piece has weight equal
+to the number of new letters needed at that join. Dynamic programming
+finds the best choices within this fixed order and the specified set of
+openings. Searching over orders, moving groups of pieces, and changing
+local images of a selection provide new inputs to this exact calculation.
+Exactness for a fixed order does not imply optimality over all words.
+
+At ten symbols the selection has 350 closed trails, obtained from our
+earlier selection with 364 trails by a pair switch. The organization of
+the mixed trails follows rumstd's contribution~\cite{rumstd}. We choose
+the arrangement of groups of ordinary trails and mixed-trail runs, and
+then their openings, by dynamic programming within the stated arrangement
+model.
+
+At eleven symbols the starting selection and arrangement are Halfar's
+selection X. A block may be relabeled by rotations of its old symbols,
+by exchanging its two added symbols, or by reversal with the corresponding
+relabeling. These operations preserve its internal counts but change the
+available ends. We vary these block images together with the arrangement
+and then optimize the openings. The twelve-symbol word uses Halfar's
+selection E and starts from his plan of length $\num{522737299}$. The
+thirteen-symbol word uses his selection N and generator. In both cases
+we optimize the order and cuts.
+
+Every word was scanned directly for permutation coverage. The accompanying
+checker ranks the length-$n$ factors with distinct symbols and verifies
+that all $n!$ ranks occur. The repository contains the checker, the four
+check records, and the exact words. These literal checks are separate
+from the Lean proof of Theorems~\ref{thm-asymptotic} and~\ref{thm-finite}.
+
+The files use the first $n$ characters of \word{0123456789ABC}, one byte
+per symbol, without a final newline. The ten- and eleven-symbol words are
+plain text; the two larger words are compressed without loss. A manifest
+records their lengths and SHA-256 hashes, so the checked words can be
+identified independently of their compressed representation. Instructions
+for decompression and verification are in the repository's word guide.
+
+The group discussion of October 2026 records further finite improvements.
+Echols introduced compact recipes for fourteen-symbol words and a move that
+reopens consecutive trails. Theo H. varied trail placement and opening phase,
+and Halfar combined these moves with his own selections and searches~\cite{discussion}.
+Halfar announced lengths $\num{522736969}$, $\num{6747802319}$, and
+$\num{93904804425}$ for twelve, thirteen, and fourteen symbols, respectively.
+The first two are shorter than the corresponding words distributed here;
+the last improves the fourteen-symbol value in Table~\ref{tab-finite}.
+Our eleven-symbol word has $30$ fewer letters than Halfar's announced
+$\num{43930578}$. These comparisons keep the explicit words separate from
+the general existence theorem. At eight symbols, Halfar's announced
+$\num{46174}$ was followed by Theo H.'s $\num{46173}$, obtained from the
+same selection with different openings and joins~\cite{eight}.
+
+\begin{thebibliography}{9}
+
+\bibitem{pantone}
+J. Pantone,
+\emph{Superpermutations with $(n-3)!$ coefficient $43/80$},
+2026. Construction, exposition, and Lean formalization available at
+\url{https://github.com/jaypantone/superperm-upper-43-80}.
+
+\bibitem{halfar}
+J. Halfar,
+\emph{Superpermutations}, October 2026 source and construction notes.
+The selections, block replacements, and coefficient $1771/3456$
+used here are recorded at
+\url{https://github.com/jhalfar/superpermutations/tree/cc5c763bd5854317b20dadb138990802656e6f03}.
+The coefficient was announced on 6 October 2026 at
+\url{https://groups.google.com/g/superpermutators/c/6ozhk3faHDA}.
+
+\bibitem{rumstd}
+rumstd,
+\emph{Shorter explicit superpermutations}, contribution to Pantone's
+construction, 2026,
+\url{https://github.com/jaypantone/superperm-upper-43-80/pull/3}.
+
+\bibitem{discussion}
+W. Echols, Theo H., and J. Halfar,
+\emph{Shorter words and compact recipes for superpermutations},
+Superpermutators discussion, 17--20 October 2026,
+\url{https://groups.google.com/g/superpermutators/c/iIgHJwUc9ww}.
+
+\bibitem{eight}
+J. Halfar and Theo H.,
+\emph{An eight-symbol superpermutation of length 46,174 and an improvement to 46,173},
+Superpermutators discussion, 20 October 2026,
+\url{https://groups.google.com/g/superpermutators/c/a-oOgxxHHHg}.
+
+\end{thebibliography}
+\end{document}

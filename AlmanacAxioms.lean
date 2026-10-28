@@ -1,3 +1,3 @@
 import AlmanacSolution
 
-#print axioms almanac_claim
+#print axioms AlmanacSubmission.asymptotic_upper

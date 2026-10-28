@@ -1,15 +1,27 @@
 {
-  "status": "PASS",
+  "status": "PASS_LOCAL_BUILD_AND_AXIOMS",
+  "scope": "Compiled the current source closure with the pinned shared Lean/Mathlib setup; reused hash-verified supporting objects. No new export replay, NanoDa replay or hosted verification.",
+  "started_utc": "2026-10-28T20:52:56.039253+00:00",
+  "finished_utc": "2026-10-28T20:53:52.958246+00:00",
   "targets": [
     "AlmanacAxioms"
   ],
-  "started_utc": "2026-10-27T21:16:32.058273+00:00",
-  "finished_utc": "2026-10-27T21:17:33.830725+00:00",
   "compiler_sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
-  "scope": "Current repository source closure; pinned shared libraries reused.",
+  "runtime_artifacts": {
+    "lib/lean/libInit_shared.dylib": "b788cf0d038e33afe699fa994c52bcee3bf072d84ac71901739d870369ec318b",
+    "lib/lean/libLake_shared.dylib": "43e2aa2877eccaeb9d57a6d01b5947e02b71070e99099939a07bfad113bab270",
+    "lib/lean/libleanshared.dylib": "cd332259fb604bf910288efdbf6f840dc35e00972a7df13aea2b717dacf8cddb",
+    "lib/lean/libleanshared_1.dylib": "2a10216dd8fd3dadae11dbbe4863162db13eaaf3cecfa82a691bb22cbf062f2a",
+    "lib/lean/libleanshared_2.dylib": "7e5de27f8138151784f77cdfb9ea1f630cf32d36e8fe6acdc862bba51a65d566"
+  },
+  "module_count": 683,
+  "module_status_counts": {
+    "PASSED": 4,
+    "REUSED_VERIFIED": 679
+  },
+  "resource_policy": "Project lock; one compiler; -j1 -M4096; existing watchdog and disk limits. No dependency installation or shared-cache mutation.",
   "source_sha256": {
-    "AlmanacDefs": "ba6c46024977ada4b6a83d4961a1883fd48029460a04e20ea89dd473c76ffd2f",
-    "AlmanacStatement": "7041bf1e3d5bf5fbe1d02cea3b4695d04469f7114b9e7862c116dca7d3d1b79a",
+    "AlmanacDefs": "3e869f896a193e67da97c4fa535ddccec2e2f3d3152d2cbf552373159e138b0f",
     "SuperpermutationUpperBound.Foundation.Words": "e45733403918e94c6d4e27521621cff408efe432f2bd3b25ad2c437072fa325c",
     "SuperpermutationUpperBound.Rows": "68c8577913afc4ae704379282b9437949b61b76a5f2d581fe02c4e498906f66d",
     "SuperpermutationUpperBound.Foundation.Rotation": "d695649062c95bd1b3c419c65ae5b21ee6876712baf1994a9dca0abda8c0172a",
@@ -689,15 +701,21 @@
     "upper.Consequences": "183b838c5420ab5bfbdcfc608bea0644485a0078a3ae84ba593ce27414e7a572",
     "upper.Results": "f6f569e65bdc17cc9b8ce8d21c7b54371fd12136ba3ae043cc57bc619e1bbc92",
     "Solution": "8ae69edefe945a4ccb685b1a93d50e506801e3e2af6abe44dd638756da334d31",
-    "AlmanacAdapter": "1a1624d10f64ad2f1cad5312f0a22824208118e337ef8f95df9dd6f7b7116380",
-    "AlmanacSolution": "06b8cf6c8bd0bad2a3907d120c25b33ed84a263c58cb0467f24ea60dc8a775db",
-    "AlmanacAxioms": "5b43a2fd35e7c5f8a4b5840d173d80d79fee196ceb329f4bae744d6c97a02e93"
+    "AlmanacAdapter": "eb58547ce26b63ae5030fa4cbdf1ee6b5946261f3ea8c1b6069ab35427a7e84d",
+    "AlmanacSolution": "d96444e19674dfd57e33b8a6573181135a76ae1b863855bb8b84b35d2d67d4d3",
+    "AlmanacAxioms": "c7cd9be7fc7d2caad2a7812cd97d876504701cd9c1a00d7ee4cd98ca4ede9d05"
   },
-  "compiled_modules": [
-    "AlmanacStatement",
-    "AlmanacAdapter",
-    "AlmanacSolution",
-    "AlmanacAxioms"
-  ],
-  "reused_verified_modules": 680
+  "configuration_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lakefile.toml": "ee928303a7e4bd037fbd3797b198cc8320a264eff381ad0630610d0746c08ee8",
+    "lake-manifest.json": "59037d6b91f7677dede4638861b75aa246693b20f17015508204a4c5d125f4b6"
+  },
+  "full_external_build_receipt_sha256": "8e7c5c15e0002d76629f61628829383c7eefc32fc56f4aac8e2c79d8359056d4",
+  "axioms_sha256": "2fae6d53a16e8e73f56c4abd6b3179a6e60cc5780010c3abf13a149dafd92b3e",
+  "submitted_theorems": 1,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
 }

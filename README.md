@@ -1,6 +1,6 @@
 # A smaller upper bound for superpermutations
 
-The Almanac entry point is `almanac_claim` in [AlmanacSolution.lean](AlmanacSolution.lean). It proves the general finite construction bound, the asymptotic bound, and seven numerical existence consequences. See [BUILD.md](docs/BUILD.md) for build commands and verification.
+The Almanac batch entry point is [AlmanacSolution.lean](AlmanacSolution.lean), with one result per theorem in `AlmanacSubmission`. See [the Almanac submission guide](docs/ALMANAC.md) for the selected results, template coverage, validation, and submission steps. The original Palomar configuration and proof development are retained separately below.
 
 A superpermutation on n symbols contains every permutation of those symbols
 as a contiguous factor. Write S(n) for its minimum possible length and
@@ -25,7 +25,7 @@ finite form for every n ≥ 14, with a parameter that controls how the final
 pieces are joined. [Solution.lean](Solution.lean) proves that form, its
 asymptotic consequence, and seven numerical corollaries.
 
-## What is submitted for comparison
+## Original Palomar comparison
 
 [comparator.json](comparator.json) selects two theorems in the namespace
 `SuperpermutationUpper`:
