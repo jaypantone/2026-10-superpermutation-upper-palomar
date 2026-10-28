@@ -49,7 +49,7 @@
     },
     "catalogue_sha256": "66426830a4f72819b94aaa69c65856b9242a863f21e56a24e3e189d4d35320d4"
   },
-  "recorded_utc": "2026-10-28T21:03:22.370170+00:00",
+  "recorded_utc": "2026-10-28T22:42:37.564385+00:00",
   "scope": "Official batch parser, layout, manifest, source and paper checks; no hosted preview, submission, Lean replay, or NanoDa replay.",
   "judge_source_url": "https://web-production-daed9.up.railway.app/lean/judge-source.tar.gz",
   "judge_source_sha256": {
@@ -62,9 +62,10 @@
     "lean/batch/paper.py": "d71b6f4af538c5f39cccb4ac0e969bc2dbebe23564a3f0aeb1326a3fc463fa4e"
   },
   "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "exact_mathlib_urls_and_revisions": "PASS",
   "upstream_mathlib_manifest_sha256": "6fcb8417bf0d6056cebf3c9f9bacd4569f21f3b9c571c60649150b9118b55147",
   "files": 749,
-  "bytes": 98099439,
+  "bytes": 98101116,
   "lean_files": 687,
   "lean_lines": 90350,
   "layout_dir": ".",
@@ -222,8 +223,8 @@
     "SuperpermutationUpperBound/Transport/Successor.lean": "4dd615fc06d87f1ba83766fa33fb78d4d7dcbf01dcdf32bb634df06f20b85656",
     "SuperpermutationUpperBound/Transport/Winding.lean": "a3489dfb3c099cc83ebcade3bf759bc61fb7e9a921210afee71b11d589f2767d",
     "UpperBoundProof/Statement.lean": "2b0d4f14ea7f4b0b2daef3ea89b3f114e96bc981bc82af6bc240001950583297",
-    "lake-manifest.json": "59037d6b91f7677dede4638861b75aa246693b20f17015508204a4c5d125f4b6",
-    "lakefile.toml": "ee928303a7e4bd037fbd3797b198cc8320a264eff381ad0630610d0746c08ee8",
+    "lake-manifest.json": "cde979e62af9d828bdcd134030dbeb6afc81b48759f0aae0040b7a3cacdf6dc7",
+    "lakefile.toml": "7e0a2143dc3a9fc390963cb2ef390f83fa16f847c1d3b12810f1ecbb48d7831e",
     "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
     "upper/Alphabet.lean": "69710cc5932802251ed897b6cb6353f78beec4cf13bdcb1a870259972c4f4505",
     "upper/Base.lean": "83fce4bccb7174db70f828791d4087b6cfae1d5cbf26810b0f216047b5832d9b",

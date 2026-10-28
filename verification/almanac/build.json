@@ -717,5 +717,18 @@
     "propext",
     "Classical.choice",
     "Quot.sound"
-  ]
+  ],
+  "post_build_configuration_update": {
+    "reason": "Use the judge\u2019s literal Mathlib URL without .git; no Lean source, compiler, package revision, or compiled dependency changed. No new Lean build was necessary.",
+    "current_configuration_sha256": {
+      "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "lakefile.toml": "7e0a2143dc3a9fc390963cb2ef390f83fa16f847c1d3b12810f1ecbb48d7831e",
+      "lake-manifest.json": "cde979e62af9d828bdcd134030dbeb6afc81b48759f0aae0040b7a3cacdf6dc7"
+    },
+    "checks": [
+      "Exact ecosystem URLs and commits in manifest and direct Lake requirements",
+      "Shared cache identity and all non-URL manifest fields unchanged",
+      "Changed dependency revision still rejected by local cache validation"
+    ]
+  }
 }
